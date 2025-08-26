@@ -1,51 +1,102 @@
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const Encabezado = () => {
-  const [expand, setExpand] = useState(false);
-
-  // Posición y tamaño del hueco
-  const holeWidth = expand ? 180 : 160;
-  const holeHeight = expand ? 110 : 80;
-  const holeRx = holeHeight / 4; // Para que coincida con border-radius del botón
-  const holeCx = expand ? "90%" : "100%";
-  const holeCy = "80%";
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="relative flex items-center justify-center h-36 w-full bg-transparent">
-      <div className="relative h-36 w-full overflow-hidden">
-        {/* SVG que “come” el div */}
-        <svg className="absolute inset-0 w-full h-full">
-          <defs>
-            <mask id="hole">
-              <rect width="100%" height="100%" fill="white" />
-              {/* Rectángulo redondeado como hueco */}
-              <rect
-                x={holeCx}
-                y={holeCy}
-                width={holeWidth}
-                height={holeHeight}
-                rx={holeRx}
-                ry={holeRx}
-                fill="black"
-                className="transition-all duration-700 ease-in-out"
-                transform={`translate(-${holeWidth / 2}, -${holeHeight / 2})`}
-              />
-            </mask>
-          </defs>
-          {/* Rect que reemplaza el color del div */}
-          <rect width="100%" height="100%" fill="#5F6F66" mask="url(#hole)" />
-        </svg>
+    <>
+      <svg className="absolute w-0 h-0">
+        <defs>
+          <mask id="hole-mask" maskContentUnits="objectBoundingBox">
+            <rect width="1" height="1" fill="white" />
+            <rect
+              x="0"
+              y="0.5"
+              width="0.10"
+              height="0.5"
+              rx="0.2"
+              fill="black"
+            />
+            <rect
+              x="0.05"
+              y="0.5"
+              width="0.90"
+              height="0.5"
+              rx="0"
+              fill="black"
+            />
+            <rect
+              x="0.5"
+              y="0.5"
+              width="0.5"
+              height="0.5"
+              rx="0"
+              fill="black"
+            />
+            <rect
+              x="0"
+              y="0.75"
+              width="0.25"
+              height="0.25"
+              rx="0"
+              fill="black"
+            />
+          </mask>
+        </defs>
+      </svg>
 
-        {/* Botón */}
-        <button
-          onClick={() => setExpand(!expand)}
-          className={`absolute w-20 h-10 bg-[#5F6F66] rounded-full shadow-lg
-            bottom-4 right-4
-            transition-all duration-700 ease-in-out
-            ${expand ? "translate-x-2 translate-y-2 w-24 h-12" : ""}`}
+      <nav className="flex h-20 w-full bg-transparent relative">
+        <div
+          className={twMerge(
+            "rounded-br-2xl bg-verde-intermedio shadow-custom-shadow",
+            expanded ? "w-[60%]" : "w-[70%]"
+          )}
         />
-      </div>
-    </div>
+        <div
+          id="sidebar"
+          className={twMerge(
+            "bg-verde-intermedio h-full shadow-custom-shadow",
+            expanded ? "w-[40%]" : "w-[30%]"
+          )}
+          style={{
+            maskImage: "url(#hole-mask)",
+            WebkitMaskImage: "url(#hole-mask)",
+          }}
+        ></div>
+        {!expanded && (
+          <button
+            className={twMerge(
+              "bg-verde-intermedio shadow-custom-shadow text-white ml-[2.5%] mt-2 h-[45%] w-full rounded-2xl absolute bottom-0 right-[2.5%]",
+              expanded ? "w-[35%]" : "w-[25%]"
+            )}
+            onClick={() => setExpanded(!expanded)}
+          >
+            <img
+              className="w-[80%] mx-2"
+              src="/img/menuHamburguesa.svg"
+              alt="menu hamburguesa"
+            />
+          </button>
+        )}
+        {expanded && (
+          <ul className="bg-verde-intermedio shadow-custom-shadow text-white ml-[2.5%] w-[35%] rounded-2xl absolute top-12 right-[2.5%] pl-3 py-3">
+            <li className="border-b-1 pl-4">Inicio</li>
+            <li>Cartas/Juego</li>
+            <li>Clases</li>
+            <li>Contacto</li>
+            <li>
+              <button
+                className="absolute top-1 right-2"
+                onClick={() => setExpanded(!expanded)}
+              >
+                x
+              </button>
+            </li>
+          </ul>
+        )}
+      </nav>
+    </>
   );
 };
 
