@@ -1,6 +1,6 @@
 const Principal = () => {
   return (
-    <div>
+    <div className="align-center flex justify-center h-full">
       <img src="/img/logoPrincipal.svg" alt="" />
     </div>
   );

@@ -4,44 +4,69 @@ import { twMerge } from "tailwind-merge";
 const Encabezado = () => {
   const [expanded, setExpanded] = useState(false);
 
+  const secciones = [
+    { nombre: "Inicio", link: "/" },
+    { nombre: "Cartas/Juego", link: "/juegoportada" },
+    { nombre: "Clases", link: "/clases" },
+    { nombre: "Contacto", link: "/contacto" },
+  ];
+
   return (
     <>
-      <nav className="flex h-[69px] w-full bg-transparent relative">
-        {!expanded && (
-          <div className="bg-no-repeat bg-[url(/img/navCerrada.svg)] w-full h-full bg-cover sm:hidden">
-            <button
-              className={twMerge(
-                "bg-verde-intermedio shadow-custom-shadow text-white ml-[2.5%] mt-2 h-[45%] w-full rounded-2xl absolute bottom-0 right-[2.5%]",
-                expanded ? "w-[35%]" : "w-[25%]"
-              )}
-              onClick={() => setExpanded(!expanded)}
-            >
+      <nav className="flex relative">
+        <div className="xs:hidden">
+          {!expanded && (
+            <>
               <img
-                className="w-[80%] mx-2"
-                src="/img/menuHamburguesa.svg"
-                alt="menu hamburguesa"
+                className="w-full h-auto"
+                src="/img/navCerrada.svg"
+                alt="Navbar"
               />
-            </button>
-          </div>
-        )}
-        {expanded && (
-          <div className="bg-no-repeat bg-[url(/img/navAbierta.svg)] w-full h-full bg-cover sm:hidden">
-            <ul className="bg-verde-intermedio shadow-custom-shadow text-white ml-[2.5%] w-[35%] rounded-2xl absolute top-12 right-[2.5%] pl-3 py-3">
-              <li className="border-b-1 pl-4">Inicio</li>
-              <li>Cartas/Juego</li>
-              <li>Clases</li>
-              <li>Contacto</li>
-              <li>
+              <button
+                className={"w-[20%] h-auto absolute bottom-0 right-[1%]"}
+                onClick={() => setExpanded(!expanded)}
+              >
+                <img src="/img/hamburgesa.svg" alt="Menu Hamburguesa" />
+              </button>
+            </>
+          )}
+          {expanded && (
+            <>
+              <img
+                className="w-full h-auto"
+                src="/img/navAbierta.svg"
+                alt="Navbar"
+              />
+              <div className="w-[40%] h-auto z-20 bg-verde-intermedio shadow-custom-shadow rounded-2xl absolute top-[60%] right-[4%] p-3">
+                <ul className="text-white px-3 mx-auto">
+                  {secciones.map((seccion, index) => (
+                    <li
+                      key={index}
+                      className={
+                        index < secciones.length - 1 ? "border-b-1" : ""
+                      }
+                    >
+                      <a href={seccion.link}>{seccion.nombre}</a>
+                    </li>
+                  ))}
+                </ul>
                 <button
-                  className="absolute top-1 right-2"
+                  className="absolute top-1 right-4 text-white"
                   onClick={() => setExpanded(!expanded)}
                 >
                   x
                 </button>
-              </li>
-            </ul>
-          </div>
-        )}
+              </div>
+            </>
+          )}
+        </div>
+        <div className="hidden xs:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8">
+          {secciones.map((seccion, index) => (
+            <h1 key={index} className="text-white text-lg font-bold px-2 my-4">
+              <a href={seccion.link}>{seccion.nombre}</a>
+            </h1>
+          ))}
+        </div>
       </nav>
     </>
   );
