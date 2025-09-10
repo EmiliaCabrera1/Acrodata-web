@@ -1,4 +1,12 @@
+import { useState } from "react";
+import ImgClases from "../Componentes/ImgClases";
+import ImgClasesAbierta from "../Componentes/ImgClasesAbierta";
+import InfoClasesCerrada from "../Componentes/InfoClasesCerrada";
+import InfoClasesAbierta from "../Componentes/InfoClasesAbierta";
+
 const Clases = () => {
+  const [claseCerrada, setClaseCerrada] = useState(false);
+
   return (
     <div>
       <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 my-3">
@@ -11,21 +19,51 @@ const Clases = () => {
         disfrute en cada encuentro. ¡Animate a volar!{" "}
       </p>
       <div className="flex justify-center">
-        <div className=" m-2 w-44 h-100 bg-neutral-500/0 rounded-[10px] shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)] border border-neutral-500">
-          <img className="-mb-1" src="/img/imgClases1.svg" alt="Img" />
-        </div>
-        <div>
-          <div className="flex relative items-end m-2">
-            <img src="/img/infoChica.svg" alt="fondo chico" />
-            <img
-              className="my-2 absolute right-2 bottom-2"
-              src="/img/abrirInfo.svg"
-              alt="flecha"
-            />
-          </div>
-          <div></div>
-          <div></div>
-        </div>
+        {claseCerrada && (
+          <>
+            <ImgClases />
+            <div>
+              <InfoClasesCerrada
+                titulo="CLASES INDIVIDUALES"
+                subtitulo="Online"
+              />
+              <InfoClasesCerrada
+                titulo="CLASES INDIVIDUALES"
+                subtitulo="Presencial"
+              />
+              <InfoClasesCerrada
+                titulo="CLASES GRUPALES"
+                subtitulo="Presencial"
+              />
+            </div>
+          </>
+        )}
+        {!claseCerrada && (
+          <>
+            <div>
+              <InfoClasesAbierta
+                titulo="CLASES INDIVIDUALES"
+                subtitulo="Online"
+                info="Clases personalizadas adaptadas a tus necesidades y nivel."
+                precioMensual="Precio mensual: $15.000 (4 clases mensuales)"
+                precioClase="Precio por clase: $4.500"
+              />
+              <div className="flex ">
+                <ImgClasesAbierta />
+                <div>
+                  <InfoClasesCerrada
+                    titulo="CLASES INDIVIDUALES"
+                    subtitulo="Presencial"
+                  />
+                  <InfoClasesCerrada
+                    titulo="CLASES GRUPALES"
+                    subtitulo="Presencial"
+                  />
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
