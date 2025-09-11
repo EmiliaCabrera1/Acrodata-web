@@ -14,13 +14,13 @@ const InfoClasesCerrada = ({
         alt="fondo chico"
       />
       <div className="absolute top-2 left-4">
-        <div className="flex gap-2 mb-1">
+        <div className="flex gap-3 mb-2">
           <h2 className="text-[12px] text-[#36463E] font-semibold ">
             {titulo}
           </h2>
           <h3 className="text-[12px] text-[#36463E]">{subtitulo}</h3>
         </div>
-        <h3 className="text-[12px] text-[#36463E]">{info}</h3>
+        <h3 className="text-[12px] text-[#36463E] mb-2">{info}</h3>
         <h3 className="text-[12px] text-[#36463E]">{precioMensual}</h3>
         <h3 className="text-[12px] text-[#36463E]">{precioClase}</h3>
       </div>
