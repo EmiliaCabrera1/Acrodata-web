@@ -47,6 +47,7 @@ const Clases = () => {
                 info="Clases personalizadas adaptadas a tus necesidades y nivel."
                 precioMensual="Precio mensual: $15.000 (4 clases mensuales)"
                 precioClase="Precio por clase: $4.500"
+                accionCerrar={() => setClaseCerrada(true)}
               />
               <div className="flex ">
                 <ImgClasesAbierta />
