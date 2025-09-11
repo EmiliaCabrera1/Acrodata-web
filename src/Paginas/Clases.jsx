@@ -24,14 +24,17 @@ const Clases = () => {
             <ImgClases />
             <div>
               <InfoClasesCerrada
+                fondo={"/img/fondoInfoChica1.svg"}
                 titulo="CLASES INDIVIDUALES"
                 subtitulo="Online"
               />
               <InfoClasesCerrada
+                fondo={"/img/fondoInfoChica2.svg"}
                 titulo="CLASES INDIVIDUALES"
                 subtitulo="Presencial"
               />
               <InfoClasesCerrada
+                fondo={"/img/fondoInfoChica3.svg"}
                 titulo="CLASES GRUPALES"
                 subtitulo="Presencial"
               />
@@ -53,10 +56,12 @@ const Clases = () => {
                 <ImgClasesAbierta />
                 <div>
                   <InfoClasesCerrada
+                    fondo={"/img/fondoInfoChica2.svg"}
                     titulo="CLASES INDIVIDUALES"
                     subtitulo="Presencial"
                   />
                   <InfoClasesCerrada
+                    fondo={"/img/fondoInfoChica3.svg"}
                     titulo="CLASES GRUPALES"
                     subtitulo="Presencial"
                   />

@@ -10,7 +10,7 @@ const InfoClasesCerrada = ({
     <div className="flex relative items-end m-2">
       <img
         className="w-full h-auto"
-        src="/img/infoGrande.svg"
+        src="/img/fondoInfoGrande.svg"
         alt="fondo chico"
       />
       <div className="absolute top-2 left-4">
