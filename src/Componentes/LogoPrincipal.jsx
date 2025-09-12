@@ -1,7 +1,7 @@
 const logoPrincipal = () => {
   return (
     <div className="flex items-center justify-center">
-      <img src="/img/logoPrincipal.svg" alt="Logo" className="" />
+      <img className="" src="/img/logoPrincipal.svg" alt="Logo" />
     </div>
   );
 };

@@ -1,11 +1,11 @@
-const piePagina = () => {
+const PiePagina = () => {
   return (
-    <div className="flex items-center justify-center bg-[#5F6F66] p-4 gap-4">
-      <img className="" src="/img/logoInstagram.svg" alt="Logo Instagram" />
-      <img className="" src="/img/logoGmail.svg" alt="Logo Gmail" />
-      <img className="" src="/img/logoFacebook.svg" alt="Logo Facebook" />
-    </div>
+    <footer className="fixed bottom-0 left-0 w-full flex items-center justify-center bg-[#5F6F66] p-4 gap-4 inset-shadow">
+      <img src="/img/logoInstagram.svg" alt="Logo Instagram" />
+      <img src="/img/logoGmail.svg" alt="Logo Gmail" />
+      <img src="/img/logoFacebook.svg" alt="Logo Facebook" />
+    </footer>
   );
 };
 
-export default piePagina;
+export default PiePagina;
