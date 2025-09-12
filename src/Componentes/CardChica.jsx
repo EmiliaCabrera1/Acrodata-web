@@ -1,9 +1,13 @@
-const logoPrincipal = () => {
+const CardChica = ({ idArchivo, nombre, onClick }) => {
+  const url = `https://drive.google.com/thumbnail?id=${idArchivo}&sz=h100`;
   return (
-    <div class="w-16 h-24 bg-stone-200 rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-      <img src="/img/imgClases1.svg" alt="" />
-    </div>
+    <button
+      onClick={onClick}
+      className="p-2 flex flex-col justify-end w-16 h-24 bg-stone-200 rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer"
+    >
+      <img className="w-auto max-h-24" src={url} alt={nombre} />
+    </button>
   );
 };
 
-export default logoPrincipal;
+export default CardChica;

@@ -2,8 +2,21 @@ import "./App.css";
 import Rutas from "./Rutas";
 import Encabezado from "./Componentes/Encabezado";
 import Pie from "./Componentes/PiePagina";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchSheetData } from "./store/dataSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.data.value);
+
+  useEffect(() => {
+    if (data.lenght === 0 || !data) {
+      console.log("fetching data...");
+      dispatch(fetchSheetData());
+    }
+  }, [data, dispatch]);
+
   return (
     <>
       <div className="relative min-h-screen">
