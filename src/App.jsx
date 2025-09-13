@@ -11,7 +11,7 @@ function App() {
   const data = useSelector((state) => state.data.value);
 
   useEffect(() => {
-    if (data.lenght === 0 || !data) {
+    if (!data || data?.lenght === 0) {
       console.log("fetching data...");
       dispatch(fetchSheetData());
     }
