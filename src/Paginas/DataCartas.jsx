@@ -8,7 +8,7 @@ const DataCartas = () => {
   const [selectedCard, setSelectedCard] = useState(null);
 
   return (
-    <div className="flex flex-wrap flex-row gap-4 my-6">
+    <div className="flex flex-row max-h-full flex-wrap overflow-y-scroll gap-4 py-4">
       {cards.length > 0 ? (
         cards.map((card, idx) => {
           return (
