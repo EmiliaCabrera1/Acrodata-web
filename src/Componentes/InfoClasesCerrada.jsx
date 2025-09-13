@@ -1,6 +1,10 @@
-const InfoClasesCerrada = ({ fondo, titulo, subtitulo }) => {
+const InfoClasesCerrada = ({ id, fondo, titulo, subtitulo, onClick }) => {
   return (
-    <div className="flex relative items-end mx-2 mt-2 mb-4">
+    <button
+      className="flex relative items-end mx-2 mt-2 mb-4"
+      onClick={onClick}
+      id={id}
+    >
       <img src={fondo} alt="fondo" />
       <div className="absolute top-2 left-4">
         <h2 className="text-[12px] text-[#36463E] font-semibold ">{titulo}</h2>
@@ -11,7 +15,7 @@ const InfoClasesCerrada = ({ fondo, titulo, subtitulo }) => {
         src="/img/abrirInfo.svg"
         alt="flecha"
       />
-    </div>
+    </button>
   );
 };
 

@@ -5,7 +5,37 @@ import InfoClasesCerrada from "../Componentes/InfoClasesCerrada";
 import InfoClasesAbierta from "../Componentes/InfoClasesAbierta";
 
 const Clases = () => {
-  const [claseCerrada, setClaseCerrada] = useState(false);
+  const [claseAbierta, setClaseAbierta] = useState(null);
+
+  const infoClases = [
+    {
+      id: 1,
+      titulo: "CLASES INDIVIDUALES",
+      subtitulo: "Online",
+      info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
+      precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
+      precioClase: "Precio por clase: $4.500",
+      fondo: "/img/fondoInfoChica1.svg",
+    },
+    {
+      id: 2,
+      titulo: "CLASES INDIVIDUALES",
+      subtitulo: "Presencial",
+      info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
+      precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
+      precioClase: "Precio por clase: $4.500",
+      fondo: "/img/fondoInfoChica2.svg",
+    },
+    {
+      id: 3,
+      titulo: "CLASES GRUPALES",
+      subtitulo: "Presencial",
+      info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
+      precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
+      precioClase: "Precio por clase: $4.500",
+      fondo: "/img/fondoInfoChica3.svg",
+    },
+  ];
 
   return (
     <div>
@@ -18,53 +48,52 @@ const Clases = () => {
         y confianza, y cerramos volando en pareja. Conexión, comunicación y
         disfrute en cada encuentro. ¡Animate a volar!{" "}
       </p>
-      <div className="flex justify-center">
-        {claseCerrada && (
+      <div className="flex justify-center relative">
+        {!claseAbierta && (
           <>
             <ImgClases />
             <div>
-              <InfoClasesCerrada
-                fondo={"/img/fondoInfoChica1.svg"}
-                titulo="CLASES INDIVIDUALES"
-                subtitulo="Online"
-              />
-              <InfoClasesCerrada
-                fondo={"/img/fondoInfoChica2.svg"}
-                titulo="CLASES INDIVIDUALES"
-                subtitulo="Presencial"
-              />
-              <InfoClasesCerrada
-                fondo={"/img/fondoInfoChica3.svg"}
-                titulo="CLASES GRUPALES"
-                subtitulo="Presencial"
-              />
+              {infoClases.map((clase) => (
+                <InfoClasesCerrada
+                  key={clase.id}
+                  id={clase.id}
+                  fondo={clase.fondo}
+                  titulo={clase.titulo}
+                  subtitulo={clase.subtitulo}
+                  onClick={() => setClaseAbierta(clase)}
+                />
+              ))}
             </div>
           </>
         )}
-        {!claseCerrada && (
+        {claseAbierta && (
           <>
             <div>
               <InfoClasesAbierta
-                titulo="CLASES INDIVIDUALES"
-                subtitulo="Online"
-                info="Clases personalizadas adaptadas a tus necesidades y nivel."
-                precioMensual="Precio mensual: $15.000 (4 clases mensuales)"
-                precioClase="Precio por clase: $4.500"
-                accionCerrar={() => setClaseCerrada(true)}
+                titulo={claseAbierta.titulo}
+                subtitulo={claseAbierta.subtitulo}
+                info={claseAbierta.info}
+                precioMensual={claseAbierta.precioMensual}
+                precioClase={claseAbierta.precioClase}
+                accionCerrar={() => setClaseAbierta(null)}
               />
-              <div className="flex ">
+              <div className="flex relative">
                 <ImgClasesAbierta />
                 <div>
-                  <InfoClasesCerrada
-                    fondo={"/img/fondoInfoChica2.svg"}
-                    titulo="CLASES INDIVIDUALES"
-                    subtitulo="Presencial"
-                  />
-                  <InfoClasesCerrada
-                    fondo={"/img/fondoInfoChica3.svg"}
-                    titulo="CLASES GRUPALES"
-                    subtitulo="Presencial"
-                  />
+                  {infoClases
+                    .filter((clase) => {
+                      return clase.id !== claseAbierta.id;
+                    })
+                    .map((clase, idx) => (
+                      <InfoClasesCerrada
+                        key={clase.id}
+                        id={clase.id}
+                        fondo={`img/fondoInfoChica${idx + 2}.svg`}
+                        titulo={clase.titulo}
+                        subtitulo={clase.subtitulo}
+                        onClick={() => setClaseAbierta(clase)}
+                      />
+                    ))}
                 </div>
               </div>
             </div>
