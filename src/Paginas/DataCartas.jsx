@@ -9,7 +9,6 @@ const DataCartas = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [dificultadValue, setDificultadValue] = useState("Todas");
   const [filtroTexto, setFiltroTexto] = useState("");
-  console.log(cards);
 
   return (
     <div className="w-full h-full flex flex-col p-4">

@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 
 import dataReducer from './dataSlice';
+import juegoReducer from './juegoSlice';
 
 const persistConfig = {
   key: 'root',
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   data: dataReducer,
+  juego: juegoReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

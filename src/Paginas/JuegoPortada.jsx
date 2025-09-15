@@ -23,7 +23,7 @@ const JuegoPortada = () => {
       </div>
       <div className="flex flex-col items-center w-1/2 h-full">
         <a
-          href="/juego"
+          href="/juegonuevo"
           className="py-5 flex flex-col justify-end w-[90%] h-[70%] bg-stone-200 rounded-r-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer overflow-visible"
         >
           <img
@@ -34,7 +34,7 @@ const JuegoPortada = () => {
         </a>
         <a
           className="font-family-titulo text-2xl text-verde-oscuro my-10 cursor-pointer"
-          href="/juego"
+          href="/juegonuevo"
         >
           Juego
         </a>
