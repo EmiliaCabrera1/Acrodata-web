@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cartas: [],
+  dificultad: [],
 };
 
 const juegoSlice = createSlice({
@@ -12,8 +13,11 @@ const juegoSlice = createSlice({
       state.cartas = action.payload;
     },
     _resetJuego: () => initialState,
+    _setDificultad: (state, action) => {
+      state.dificultad = action.payload;
+    }
   },
 });
 
-export const { _iniciarJuego, _resetJuego } = juegoSlice.actions;
+export const { _iniciarJuego, _resetJuego, _setDificultad } = juegoSlice.actions;
 export default juegoSlice.reducer;

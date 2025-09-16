@@ -2,7 +2,6 @@ import { useState } from "react";
 import Checkbox from "../Componentes/Checkbox";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useAcrocartas from "../Hooks/useAcrocartas";
 import useJuego from "../Hooks/useJuego";
 
 const dificultades = [
@@ -14,10 +13,8 @@ const dificultades = [
 
 const JuegoNuevo = () => {
   const [selectedDificultades, setSelectedDificultades] = useState([]);
-  const { iniciarJuego } = useJuego();
+  const { setDificultad, iniciarJuego } = useJuego();
   const navegar = useNavigate();
-
-  const cards = useAcrocartas();
 
   const toggleDificultad = (name) => {
     setSelectedDificultades((prev) =>
@@ -30,17 +27,8 @@ const JuegoNuevo = () => {
       alert("Selecciona al menos una dificultad");
       return;
     }
-    const cartasRandom = [];
-    while (cartasRandom.length < 5) {
-      const cartasXDificultad = cards.filter((card) =>
-        selectedDificultades.includes(card.dificultad)
-      );
-      const carta =
-        cartasXDificultad[Math.floor(Math.random() * cartasXDificultad.length)];
-      cartasRandom.push(carta);
-    }
-    console.log(cartasRandom);
-    iniciarJuego(cartasRandom);
+    setDificultad(selectedDificultades.filter((d) => d !== "todas"));
+    iniciarJuego();
     navegar("/juego");
   };
 
