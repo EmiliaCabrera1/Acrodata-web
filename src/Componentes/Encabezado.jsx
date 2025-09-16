@@ -14,7 +14,7 @@ const Encabezado = () => {
   return (
     <>
       <nav className="flex relative">
-        <div className="xs:hidden">
+        <div className="sm:hidden w-full">
           {!expanded && (
             <>
               <img
@@ -60,7 +60,7 @@ const Encabezado = () => {
             </>
           )}
         </div>
-        <div className="hidden xs:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8">
+        <div className="hidden sm:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8">
           {secciones.map((seccion, index) => (
             <h1 key={index} className="text-white text-lg px-2 my-4">
               <a href={seccion.link}>{seccion.nombre}</a>
