@@ -1,11 +1,16 @@
 const CardChica = ({ card, onClick }) => {
-  const url = `https://drive.google.com/thumbnail?id=${card.file}&sz=h100`;
+  const url = `https://drive.google.com/thumbnail?id=${card.file}`;
+
   return (
     <button
       onClick={onClick}
-      className="p-2 flex flex-col justify-end w-16 h-24 bg-stone-200 rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer"
+      className="p-1 flex items-center justify-center w-18 h-24 bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] cursor-pointer"
     >
-      <img className="w-auto max-h-24" src={url} alt={card.nombre} />
+      <img
+        src={url}
+        alt={card.nombre}
+        className="max-w-full max-h-full object-contain drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)]"
+      />
     </button>
   );
 };

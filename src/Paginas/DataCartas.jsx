@@ -11,14 +11,24 @@ const DataCartas = () => {
   const [filtroTexto, setFiltroTexto] = useState("");
 
   return (
-    <div className="w-full h-full flex flex-col p-4">
-      <input
-        name="filtro"
-        placeholder="Escribe el nombre de una postura"
-        className="bg-fondo-claro p-2 rounded-xl shadow-custom-shadow mb-4"
-        onChange={(e) => setFiltroTexto(e.target.value)}
-      />
-      <div className="flex flex-row w-full h-full">
+    <div className="w-full h-full flex flex-col p-4 mr-4 ">
+      <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 my-3">
+        DATA CARTASS
+      </h2>
+      <div className="flex items-center ml-8 w-[80%] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
+        <img
+          src="/img/lupa.svg"
+          alt="Buscar"
+          className="w-4 h-4 opacity-60 mr-2"
+        />
+        <input
+          name="filtro"
+          placeholder="Escribe el nombre de una postura"
+          className="bg-transparent outline-none flex-1 text-sm"
+          onChange={(e) => setFiltroTexto(e.target.value)}
+        />
+      </div>
+      <div className="flex flex-row h-full ">
         <FiltroDificultad
           value={dificultadValue}
           setValue={setDificultadValue}

@@ -2,7 +2,7 @@ const opciones = ["Todas", "Principiante", "Intermedio", "Avanzado"];
 
 const FiltroDificultad = ({ value = "Todas", setValue = () => {} }) => {
   return (
-    <div className="flex flex-col w-[75px] h-full overflow-y-clip mr-4">
+    <div className="flex flex-col w-[55px] h-full overflow-y-clip mr-8">
       {opciones.map((opcion, idx) => (
         <button
           key={idx}
@@ -17,8 +17,10 @@ const FiltroDificultad = ({ value = "Todas", setValue = () => {} }) => {
         </button>
       ))}
       <div className="w-full flex flex-row">
-        <div className="w-6 h-full" />
-        <img className="object-cover" src="/img/selectorFiltroLargo.svg" />
+        <img
+          className="object-cover ml-[24px]"
+          src="/img/selectorFiltroLargo.svg"
+        />
       </div>
     </div>
   );
