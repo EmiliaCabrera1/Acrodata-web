@@ -11,8 +11,8 @@ const DataCartas = () => {
   const [filtroTexto, setFiltroTexto] = useState("");
 
   return (
-    <div className="w-full h-full flex flex-col p-4 mr-4 ">
-      <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 my-3">
+    <div className="w-full h-full flex flex-col p-4 mr-1 ">
+      <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 mt-1 mb-3">
         DATA CARTASS
       </h2>
       <div className="flex items-center ml-8 w-[80%] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">

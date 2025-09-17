@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col relative min-h-screen overflow-hidden">
+      <div className="flex flex-col relative min-h-dvh overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[url('/img/fondo.svg')] bg-cover bg-center bg-fixed"></div>
         <div className="absolute inset-0 -z-10 bg-[#36463E]/20"></div>
         <Encabezado />

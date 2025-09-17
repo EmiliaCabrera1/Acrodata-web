@@ -2,7 +2,7 @@ import React from "react";
 
 const Contacto = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center relative overflow-hidden">
+    <div className="w-full h-full flex flex-col items-center relative overflow-hidden">
       <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mb-3 mt-7 ">
         {" "}
         Hablemos y nos ponemos en movimiento juntos
@@ -30,7 +30,7 @@ const Contacto = () => {
           </button>
         </div>
       </div>
-      <div className="absolute bottom-10 -right-20">
+      <div className="absolute -bottom-20 -right-20 -z-10">
         <img src="/img/fotoContacto.svg" alt="" />
       </div>
     </div>
