@@ -39,11 +39,11 @@ const Clases = () => {
 
   return (
     <div>
-      <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 my-3">
+      <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mt-2 mb-1 ">
         Clases de Acroyoga
       </h2>
 
-      <p className="mx-4 mb-3 text-[15px] text-[#36463E]">
+      <p className="mx-4 mb-2 text-[15px] text-[#36463E]">
         Clases divertidas para todos, sin necesidad de experiencia. Empezamos
         con calentamiento y movilidad, seguimos con invertidas para ganar fuerza
         y confianza, y cerramos volando en pareja. Conexión, comunicación y

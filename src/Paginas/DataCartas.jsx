@@ -13,7 +13,7 @@ const DataCartas = () => {
   return (
     <div className="w-full h-full flex flex-col p-4 mr-1 ">
       <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 mt-1 mb-1">
-        DATA CARTASS
+        DATA CARTAS
       </h2>
       <div className="flex w-full justify-end">
         <div className="flex items-center ml-8 w-[80%] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
