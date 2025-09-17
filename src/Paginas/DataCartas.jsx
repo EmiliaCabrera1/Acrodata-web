@@ -12,23 +12,25 @@ const DataCartas = () => {
 
   return (
     <div className="w-full h-full flex flex-col p-4 mr-1 ">
-      <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 mt-1 mb-3">
+      <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 mt-1 mb-1">
         DATA CARTASS
       </h2>
-      <div className="flex items-center ml-8 w-[80%] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
-        <img
-          src="/img/lupa.svg"
-          alt="Buscar"
-          className="w-4 h-4 opacity-60 mr-2"
-        />
-        <input
-          name="filtro"
-          placeholder="Escribe el nombre de una postura"
-          className="bg-transparent outline-none flex-1 text-sm"
-          onChange={(e) => setFiltroTexto(e.target.value)}
-        />
+      <div className="flex w-full justify-end">
+        <div className="flex items-center ml-8 w-[80%] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
+          <img
+            src="/img/lupa.svg"
+            alt="Buscar"
+            className="w-4 h-4 opacity-60 mr-2"
+          />
+          <input
+            name="filtro"
+            placeholder="Escribe el nombre de una postura"
+            className="bg-transparent outline-none flex-1 text-sm"
+            onChange={(e) => setFiltroTexto(e.target.value)}
+          />
+        </div>
       </div>
-      <div className="flex flex-row h-full ">
+      <div className="flex flex-row h-full justify-end gap-2">
         <FiltroDificultad
           value={dificultadValue}
           setValue={setDificultadValue}

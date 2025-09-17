@@ -30,7 +30,7 @@ const Contacto = () => {
           </button>
         </div>
       </div>
-      <div className="absolute -bottom-20 -right-20 -z-10">
+      <div className="hidden sm:flex absolute -bottom-20 -right-20 -z-10">
         <img src="/img/fotoContacto.svg" alt="" />
       </div>
     </div>
