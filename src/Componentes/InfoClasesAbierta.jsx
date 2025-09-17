@@ -1,4 +1,4 @@
-const InfoClasesCerrada = ({
+const InfoClasesAbierta = ({
   titulo,
   subtitulo,
   info,
@@ -38,4 +38,4 @@ const InfoClasesCerrada = ({
   );
 };
 
-export default InfoClasesCerrada;
+export default InfoClasesAbierta;
