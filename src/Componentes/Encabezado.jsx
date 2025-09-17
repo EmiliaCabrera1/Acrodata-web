@@ -43,7 +43,9 @@ const Encabezado = () => {
                     <li
                       key={index}
                       className={
-                        index < secciones.length - 1 ? "border-b-1" : ""
+                        index < secciones.length - 1
+                          ? "border-b-1 mb-2"
+                          : "mb-2"
                       }
                     >
                       <a href={seccion.link}>{seccion.nombre}</a>

@@ -35,7 +35,7 @@ const DataCartas = () => {
           value={dificultadValue}
           setValue={setDificultadValue}
         />
-        <div className="flex flex-row w-2/3 max-h-full flex-wrap overflow-y-auto gap-4 pb-4 content-start">
+        <div className="flex flex-row max-h-full flex-wrap overflow-y-auto gap-4 pb-4 content-start">
           {cards.length > 0 ? (
             cards
               .filter((card) => {

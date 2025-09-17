@@ -6,7 +6,7 @@ const FiltroDificultad = ({ value = "Todas", setValue = () => {} }) => {
       {opciones.map((opcion, idx) => (
         <button
           key={idx}
-          className="flex flex-row"
+          className="flex flex-row min-w-[50px]"
           onClick={() => setValue(opcion)}
         >
           <h2 className="[writing-mode:vertical-lr] rotate-180">{opcion}</h2>
