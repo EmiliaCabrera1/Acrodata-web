@@ -89,7 +89,7 @@ const Clases = () => {
                       <InfoClasesCerrada
                         key={clase.id}
                         id={clase.id}
-                        fondo={`img/fondoInfoChica${idx + 2}.svg`}
+                        fondo={`img/fondoInfoChica2.svg`}
                         titulo={clase.titulo}
                         subtitulo={clase.subtitulo}
                         onClick={() => setClaseAbierta(clase)}
