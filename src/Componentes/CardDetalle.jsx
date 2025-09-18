@@ -3,7 +3,7 @@ const cardDetalle = ({ card, onClick }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-green-900/20">
-      <div className="flex flex-col w-80 h-[80%] bg-fondo-claro rounded-lg shadow-xl overflow-hidden">
+      <div className="flex flex-col w-80 h-[80dvh] bg-fondo-claro rounded-lg shadow-xl overflow-hidden">
         {/* Header */}
         <h2 className="text-center font-family-titulo text-[#36463E] mt-8 uppercase text-[20px] ">
           {card.nombre}
