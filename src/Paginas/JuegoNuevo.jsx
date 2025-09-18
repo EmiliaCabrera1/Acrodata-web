@@ -7,7 +7,7 @@ import useJuego from "../Hooks/useJuego";
 const dificultades = [
   { name: "principiante", label: "PRINCIPIANTE" },
   { name: "intermedio", label: "INTERMEDIO" },
-  { name: "dificil", label: "AVANZADO" },
+  { name: "avanzado", label: "AVANZADO" },
   { name: "todas", label: "TODAS" },
 ];
 
@@ -18,7 +18,9 @@ const JuegoNuevo = () => {
 
   const toggleDificultad = (name) => {
     setSelectedDificultades((prev) =>
-      prev.includes(name) ? prev.filter((d) => d !== name) : [...prev, name]
+      prev.includes(name)
+        ? [...prev.filter((d) => d !== name)]
+        : [...prev, name]
     );
   };
 
@@ -27,7 +29,8 @@ const JuegoNuevo = () => {
       alert("Selecciona al menos una dificultad");
       return;
     }
-    setDificultad(selectedDificultades.filter((d) => d !== "todas"));
+    const dificultad = selectedDificultades.filter((d) => d !== "todas");
+    setDificultad(dificultad);
     iniciarJuego();
     navegar("/juego");
   };
@@ -36,7 +39,7 @@ const JuegoNuevo = () => {
     if (
       selectedDificultades.includes("principiante") &&
       selectedDificultades.includes("intermedio") &&
-      selectedDificultades.includes("dificil")
+      selectedDificultades.includes("avanzado")
     ) {
       if (!selectedDificultades.includes("todas")) toggleDificultad("todas");
     } else {

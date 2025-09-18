@@ -1,41 +1,48 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { _iniciarJuego, _resetJuego, _setDificultad } from '../store/juegoSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { store } from "../store/store";
+import {
+  _iniciarJuego,
+  _resetJuego,
+  _setDificultad,
+} from "../store/juegoSlice";
 
 const useJuego = () => {
+  const dispatch = useDispatch();
 
-const dispatch = useDispatch();;
-const cards = useSelector((state) => state.data.value);
-const dificultad = useSelector((state) => state.juego.dificultad);
+  const juego = useSelector((state) => state.juego.cartas);
 
-const iniciarJuego = () => {
+  const iniciarJuego = () => {
+    const state = store.getState();
+    const dificultad = state.juego?.dificultad;
+    const cards = state.data?.value;
+
+    if (!cards || !dificultad) return;
+
+    const cartasXDificultad = cards.filter((card) =>
+      dificultad.includes(card.dificultad)
+    );
+    console.log(dificultad);
+    console.log(cartasXDificultad.length, "cartas");
     const cartasRandom = [];
-        while (cartasRandom.length < 5) {
-          const cartasXDificultad = cards.filter((card) =>
-            dificultad.includes(card.dificultad)
-          );
-          const carta =
-            cartasXDificultad[Math.floor(Math.random() * cartasXDificultad.length)];
-          cartasRandom.push(carta);
-        }
-        console.log(cartasRandom);
+    while (cartasRandom.length < 5 && cartasXDificultad.length > 0) {
+      const carta =
+        cartasXDificultad[Math.floor(Math.random() * cartasXDificultad.length)];
+      if (cartasRandom.includes(carta)) return;
+      cartasRandom.push(carta);
+    }
+
     dispatch(_iniciarJuego(cartasRandom));
   };
 
-const resetJuego = () => {
+  const resetJuego = () => {
     dispatch(_resetJuego());
   };
 
-  const setDificultad = (dificultad) => {
-    dispatch(_setDificultad(dificultad));
+  const setDificultad = (nivel) => {
+    dispatch(_setDificultad(nivel));
   };
 
+  return { iniciarJuego, resetJuego, setDificultad, juego };
+};
 
-const getJuego = () => {
-    const juego = useSelector((state) => state.juego.cartas)
-    return juego;
-  };
-
-    return { iniciarJuego, resetJuego, getJuego, setDificultad }
-}
-
-export default useJuego
+export default useJuego;
