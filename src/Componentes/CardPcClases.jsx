@@ -4,7 +4,7 @@ const CardPcClases = (props) => {
   return (
     <div
       key={key}
-      className="w-72 h-75 bg-transparent rounded-[10px] shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)] border border-[#5F6F66]  mt-8 overflow-visible"
+      className="w-72 h-75 bg-transparent rounded-[10px] shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)] border border-[#5F6F66]  mt-8 overflow-visible mx-4"
     >
       <div className="w-72 h-75 bg-[#EDE8DF] rounded-[10px] shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)] mt-4 ml-4 py-2 px-4 relative">
         <div className="flex gap-4 items-end">

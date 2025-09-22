@@ -16,7 +16,7 @@ const DataCartas = () => {
         DATA CARTAS
       </h2>
       <div className="flex w-full justify-end">
-        <div className="flex items-center ml-8 w-[80%] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
+        <div className="flex items-center ml-8 w-[80dvg] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
           <img
             src="/img/lupa.svg"
             alt="Buscar"
