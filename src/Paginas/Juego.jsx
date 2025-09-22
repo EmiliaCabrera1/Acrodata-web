@@ -3,7 +3,7 @@ import CardChica from "../Componentes/CardChica";
 import { useState } from "react";
 
 const Juego = () => {
-  const cartasJuego = useJuego().getJuego();
+  const cartasJuego = useJuego().juego;
   const { iniciarJuego } = useJuego();
 
   const [cartasOrdenadas, setCartasOrdenadas] = useState([]);
