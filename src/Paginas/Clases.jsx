@@ -17,7 +17,7 @@ const Clases = () => {
       subtitulo: "Online",
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
       infoExtendida:
-        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de  energía.",
+        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de energía.",
       precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
       precioClase: "Precio por clase: $4.500",
       fondo: "/img/fondoInfoChica1.svg",
@@ -28,7 +28,7 @@ const Clases = () => {
       subtitulo: "Presencial",
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
       infoExtendida:
-        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de  energía.",
+        "Viví una práctica hecha a tu medida: en la clase presencial trabajamos en detalle tu cuerpo, tus objetivos y tu ritmo. Te acompaño paso a paso para que avances con seguridad, confianza y disfrute.",
       precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
       precioClase: "Precio por clase: $4.500",
       fondo: "/img/fondoInfoChica2.svg",
@@ -39,7 +39,7 @@ const Clases = () => {
       subtitulo: "Presencial",
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
       infoExtendida:
-        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de  energía.",
+        "Compartí la energía del grupo en una clase de acroyoga donde todos los niveles tienen su lugar. Jugamos, aprendemos y fluimos juntos, combinando posturas y dinámicas que se adaptan tanto a quienes recién empiezan como a quienes ya tienen experiencia.",
       precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
       precioClase: "Precio por clase: $4.500",
       fondo: "/img/fondoInfoChica2.svg",
