@@ -3,6 +3,9 @@ import ImgClases from "../Componentes/ImgClases";
 import ImgClasesAbierta from "../Componentes/ImgClasesAbierta";
 import InfoClasesCerrada from "../Componentes/InfoClasesCerrada";
 import InfoClasesAbierta from "../Componentes/InfoClasesAbierta";
+import TextoCelClases from "../Componentes/TextoCelClases";
+import TextoPcClases from "../Componentes/TextoPcClases";
+import CardPcClases from "../Componentes/CardPcClases";
 
 const Clases = () => {
   const [claseAbierta, setClaseAbierta] = useState(null);
@@ -13,6 +16,8 @@ const Clases = () => {
       titulo: "CLASES INDIVIDUALES",
       subtitulo: "Online",
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
+      infoExtendida:
+        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de  energía.",
       precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
       precioClase: "Precio por clase: $4.500",
       fondo: "/img/fondoInfoChica1.svg",
@@ -22,6 +27,8 @@ const Clases = () => {
       titulo: "CLASES INDIVIDUALES",
       subtitulo: "Presencial",
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
+      infoExtendida:
+        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de  energía.",
       precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
       precioClase: "Precio por clase: $4.500",
       fondo: "/img/fondoInfoChica2.svg",
@@ -31,6 +38,8 @@ const Clases = () => {
       titulo: "CLASES GRUPALES",
       subtitulo: "Presencial",
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
+      infoExtendida:
+        "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de  energía.",
       precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
       precioClase: "Precio por clase: $4.500",
       fondo: "/img/fondoInfoChica2.svg",
@@ -39,13 +48,11 @@ const Clases = () => {
 
   return (
     <div>
-      <h2 className="hidden sm:flex font-family-titulo text-[30px] text-[#36463E] m-4">
-        ¡Volá con nosotros en las clases de AcroYoga!
-      </h2>
+      {/* CEL */}
       <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mt-2 mb-1 md:hidden ">
         Clases de Acroyoga
       </h2>
-
+      <TextoCelClases />
       <div className="flex justify-center relative sm:hidden">
         {!claseAbierta && (
           <>
@@ -97,6 +104,32 @@ const Clases = () => {
             </div>
           </>
         )}
+      </div>
+      {/* PC */}
+      <div className="hidden sm:flex flex-col ml-8">
+        <h2 className="font-family-titulo text-[30px] text-[#36463E] m-4">
+          ¡Volá con nosotros en las clases de AcroYoga!
+        </h2>
+        <div className="flex flex-row">
+          <ImgClases />
+          <div className="flex flex-col">
+            <TextoPcClases />
+            <div className="flex flex-row justify-around">
+              {infoClases.map((clase) => (
+                <CardPcClases
+                  key={clase.id}
+                  id={clase.id}
+                  fondo={clase.fondo}
+                  titulo={clase.titulo}
+                  subtitulo={clase.subtitulo}
+                  infoExtendida={clase.infoExtendida}
+                  precioClase={clase.precioClase}
+                  precioMensual={clase.precioMensual}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
