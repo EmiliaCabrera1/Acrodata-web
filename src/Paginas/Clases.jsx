@@ -39,17 +39,14 @@ const Clases = () => {
 
   return (
     <div>
-      <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mt-2 mb-1 ">
+      <h2 className="hidden sm:flex font-family-titulo text-[30px] text-[#36463E] m-4">
+        ¡Volá con nosotros en las clases de AcroYoga!
+      </h2>
+      <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mt-2 mb-1 md:hidden ">
         Clases de Acroyoga
       </h2>
 
-      <p className="mx-4 mb-2 text-[15px] text-[#36463E]">
-        Clases divertidas para todos, sin necesidad de experiencia. Empezamos
-        con calentamiento y movilidad, seguimos con invertidas para ganar fuerza
-        y confianza, y cerramos volando en grupo. Conexión, comunicación y
-        disfrute en cada encuentro. ¡Animate a volar!{" "}
-      </p>
-      <div className="flex justify-center relative">
+      <div className="flex justify-center relative sm:hidden">
         {!claseAbierta && (
           <>
             <ImgClases />
