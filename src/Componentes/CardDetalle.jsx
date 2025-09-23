@@ -9,8 +9,8 @@ const cardDetalle = ({ card, onClick }) => {
           {card.nombre}
         </h2>
 
-        {/* Imagen: flex-grow + h-0 fuerza ocupar solo espacio sobrante */}
-        <div className="flex-grow h-0 flex items-center justify-center px-4">
+        {/* Imagen: flex-grow + h-1 fuerza ocupar solo espacio sobrante */}
+        <div className="flex-grow h-1 flex items-center justify-center px-4">
           <img
             src={url}
             alt="Img"

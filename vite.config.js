@@ -11,4 +11,11 @@ export default defineConfig({
       targets: ["defaults", "not IE 11"],
     }),
   ],
+  css: {
+    lightningcss: {
+      targets: {
+        safari: 12 << 16, // Safari 12
+      },
+    },
+  },
 });

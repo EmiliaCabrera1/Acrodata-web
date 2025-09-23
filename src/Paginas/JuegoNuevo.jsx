@@ -50,7 +50,7 @@ const JuegoNuevo = () => {
   }, [selectedDificultades]);
 
   return (
-    <div className="relative h-full overflow-hidden">
+    <div className="relative h-full">
       <h1 className="text-verde-oscuro mt-8 mb-7 text-center">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h1>
@@ -86,7 +86,7 @@ const JuegoNuevo = () => {
         </button>
       </div>
       <img
-        className="absolute h-auto max-h-2/3 w-full -bottom-2 left-0 -z-10 object-fit"
+        className="absolute h-2/3 w-full -bottom-2 left-0 -z-10 object-fit"
         src="/img/fondoJuegoNuevo.svg"
         alt="Fondo"
       />
