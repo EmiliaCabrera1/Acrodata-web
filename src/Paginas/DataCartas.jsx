@@ -11,12 +11,12 @@ const DataCartas = () => {
   const [filtroTexto, setFiltroTexto] = useState("");
 
   return (
-    <div className="w-full h-full flex flex-col p-4 mr-1 ">
-      <h2 className="font-family-titulo text-[25px] text-[#36463E] mx-4 mt-1 mb-1">
+    <div className="w-[100dvw] h-[100dvh] flex flex-col p-4 mr-1 sm:items-center">
+      <h2 className="font-family-titulo text-[25px] sm:text-[35px] text-[#36463E] mx-4 mt-1 mb-1 ">
         DATA CARTAS
       </h2>
-      <div className="flex w-full justify-end">
-        <div className="flex items-center ml-8 w-[80dvw] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
+      <div className="flex w-[95dvw] justify-end  ">
+        <div className="flex items-center  ml-8 w-[80dvw] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
           <img
             src="/img/lupa.svg"
             alt="Buscar"
@@ -30,12 +30,12 @@ const DataCartas = () => {
           />
         </div>
       </div>
-      <div className="flex flex-row h-full justify-end gap-2">
+      <div className="flex flex-row h-full justify-end gap-2 ">
         <FiltroDificultad
           value={dificultadValue}
           setValue={setDificultadValue}
         />
-        <div className="flex flex-row max-h-full flex-wrap overflow-y-auto gap-4 pb-4 content-start">
+        <div className="flex flex-row max-h-[100dvh] sm:max-w-[90dvh] flex-wrap overflow-y-auto gap-4 pb-4 content-start">
           {cards.length > 0 ? (
             cards
               .filter((card) => {
@@ -65,6 +65,9 @@ const DataCartas = () => {
               onClick={() => setSelectedCard(null)}
             />
           )}
+        </div>
+        <div className="hidden sm:flex sm:ml-4 h-[60dvh] mt-4">
+          <img className="" src="/img/cardPCespalda.svg" alt="card" />
         </div>
       </div>
     </div>
