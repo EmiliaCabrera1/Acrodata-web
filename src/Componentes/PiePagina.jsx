@@ -4,22 +4,22 @@ const PiePagina = () => {
       <img
         src="/img/logoInstagram.svg"
         alt="Logo Instagram"
-        className="w-5 h-5 sm:w-8 sm: h-8"
+        className="w-5 h-5 sm:w-8 sm:h-8"
       />
       <img
         src="/img/logoGmail.svg"
         alt="Logo Gmail"
-        className="w-5 h-5 sm:w-8 sm: h-8"
+        className="w-5 h-5 sm:w-8 sm:h-8"
       />
       <img
         src="/img/logoWapp.svg"
         alt="Logo Whatsapp"
-        className="w-5 h-5 sm:w-8 sm: h-8"
+        className="w-5 h-5 sm:w-8 sm:h-8"
       />
       <img
         src="/img/logoFacebook.svg"
         alt="Logo Facebook"
-        className="w-5 h-5 sm:w-8 sm: h-8"
+        className="w-5 h-5 sm:w-8 sm:h-8"
       />
     </footer>
   );
