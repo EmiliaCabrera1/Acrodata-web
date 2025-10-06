@@ -1,5 +1,5 @@
 const cardDetalle = ({ card, onClick }) => {
-  const url = `https://drive.google.com/thumbnail?id=${card.file}&sz=h900`;
+  const url = `/cards/${card?.imagen?.toUpperCase()}.PNG`;
 
   return (
     <div className="flex flex-col bg-fondo-claro rounded-lg shadow-xl overflow-hidden">

@@ -1,5 +1,5 @@
 const CardChica = ({ card, onClick }) => {
-  const url = `https://drive.google.com/thumbnail?id=${card.file}`;
+  const url = `/cards/${card.imagen.toUpperCase()}.PNG`;
 
   return (
     <button
