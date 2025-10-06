@@ -12,27 +12,6 @@ const DataCartas = () => {
   const [dificultadValue, setDificultadValue] = useState("Todas");
   const [filtroTexto, setFiltroTexto] = useState("");
 
-  const Buscador = (props) => {
-    const { onChange } = props;
-    return (
-      <div className="flex w-full justify-end pr-4 sm:pr-8">
-        <div className="flex items-center  ml-8 w-[80dvw] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
-          <img
-            src="/img/lupa.svg"
-            alt="Buscar"
-            className="w-4 h-4 opacity-60 mr-2"
-          />
-          <input
-            name="filtro"
-            placeholder="Escribe el nombre de una postura"
-            className="bg-transparent outline-none flex-1 text-sm"
-            onChange={(e) => onChange(e.target.value)}
-          />
-        </div>
-      </div>
-    );
-  };
-
   const Filtro = () => {
     return (
       <FiltroDificultad value={dificultadValue} setValue={setDificultadValue} />
@@ -99,7 +78,21 @@ const DataCartas = () => {
       <h2 className="font-family-titulo text-[25px] sm:text-[35px] text-[#36463E] mx-4 mt-1 mb-1">
         DATA CARTAS
       </h2>
-      <Buscador onChange={setFiltroTexto} />
+      <div className="flex w-full justify-end pr-4 sm:pr-8">
+        <div className="flex items-center  ml-8 w-[80dvw] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
+          <img
+            src="/img/lupa.svg"
+            alt="Buscar"
+            className="w-4 h-4 opacity-60 mr-2"
+          />
+          <input
+            name="filtro"
+            placeholder="Escribe el nombre de una postura"
+            className="bg-transparent outline-none flex-1 text-sm"
+            onChange={(e) => setFiltroTexto(e.target.value)}
+          />
+        </div>
+      </div>
       <DataCartasLayout Filtro={Filtro} Cartas={Cartas} Detalle={Detalle} />
     </>
   );

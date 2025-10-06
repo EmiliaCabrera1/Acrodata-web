@@ -25,7 +25,7 @@ const cardDetalle = ({ card, onClick }) => {
         <div className="flex justify-end">
           <button
             onClick={onClick}
-            className="text-white text-xs font-medium bg-[#36463E] px-4 py-2 rounded-lg shadow-lg active:shadow-inner"
+            className="text-white text-xs font-medium bg-[#36463E] px-4 py-2 rounded-lg shadow-lg active:shadow-inner cursor-pointer"
           >
             Cerrar
           </button>
