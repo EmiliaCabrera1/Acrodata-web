@@ -1,8 +1,5 @@
 import "./App.css";
 import Rutas from "./Rutas";
-import Encabezado from "./Componentes/Encabezado";
-import Pie from "./Componentes/PiePagina";
-import Main from "./Componentes/Layout/Main";
 import Layout from "./Componentes/Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -21,11 +18,7 @@ function App() {
 
   return (
     <Layout>
-      <Encabezado />
-      <Main>
-        <Rutas />
-      </Main>
-      <Pie />
+      <Rutas />
     </Layout>
   );
 }
