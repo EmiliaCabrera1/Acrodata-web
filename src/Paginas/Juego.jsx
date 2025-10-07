@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Juego = () => {
   const cartasJuego = useJuego().juego;
-  const { iniciarJuego } = useJuego();
+  const { iniciarJuego, guardarJuego } = useJuego();
 
   const [cartasOrdenadas, setCartasOrdenadas] = useState([]);
 
@@ -68,6 +68,9 @@ const Juego = () => {
       <a
         className="my-4 w-72 h-12 text-center pt-3 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer"
         href="/juegofinal"
+        onClick={() => {
+          guardarJuego(cartasOrdenadas);
+        }}
       >
         CONTINUAR
       </a>

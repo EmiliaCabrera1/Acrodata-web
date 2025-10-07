@@ -4,6 +4,7 @@ import {
   _iniciarJuego,
   _resetJuego,
   _setDificultad,
+  _guardarJuego,
 } from "../store/juegoSlice";
 
 const useJuego = () => {
@@ -42,7 +43,11 @@ const useJuego = () => {
     dispatch(_setDificultad(nivel));
   };
 
-  return { iniciarJuego, resetJuego, setDificultad, juego };
+  const guardarJuego = (cartasOrdenadas) => {
+    dispatch(_guardarJuego(cartasOrdenadas));
+  };
+
+  return { iniciarJuego, resetJuego, setDificultad, juego, guardarJuego };
 };
 
 export default useJuego;
