@@ -1,6 +1,9 @@
 const CardPcClases = (props) => {
   const { key, titulo, subtitulo, infoExtendida, precioClase, precioMensual } =
     props;
+
+  const mensaje = `Hola Tania! Quisiera saber más sobre las ${titulo} - ${subtitulo}.`;
+  const urlWhatsApp = `https://wa.me/5493874153109?text=${encodeURIComponent(mensaje)}`;
   return (
     <div
       key={key}
@@ -17,9 +20,14 @@ const CardPcClases = (props) => {
         <p className="text-verde-oscuro">{precioClase}</p>
         <p className="text-verde-oscuro">{precioMensual}</p>
         <div className="flex justify-end">
-          <button className="bg-[#36463E] p-2 text-[#ffffff] rounded-[10px] mt-4 shadow-2xl cursor-pointer hover:bg-[#2a3b34] absolute -bottom-4 right-1">
+          <a
+            href={urlWhatsApp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#36463E] p-2 text-[#ffffff] rounded-[10px] mt-4 shadow-2xl cursor-pointer hover:bg-[#2a3b34] absolute -bottom-4 right-1"
+          >
             Consultar
-          </button>
+          </a>
         </div>
       </div>
     </div>

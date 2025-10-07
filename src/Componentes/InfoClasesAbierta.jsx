@@ -24,7 +24,7 @@ const InfoClasesAbierta = ({
         <h3 className="text-[12px] text-[#36463E]">{precioMensual}</h3>
         <h3 className="text-[12px] text-[#36463E]">{precioClase}</h3>
       </div>
-      <button className="text-white text-xs font-medium bg-[#36463E] absolute top-[68dvh] left-[65dvw] p-2 rounded-lg shadow-md active:shadow-inner">
+      <button className="text-white text-xs font-medium bg-[#36463E] absolute bottom-3 right-12 p-2 rounded-lg shadow-md active:shadow-inner">
         Consultar
       </button>
       <button onClick={() => accionCerrar()}>
