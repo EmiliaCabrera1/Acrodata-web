@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
         <div className="shrink-0">
           <Encabezado />
         </div>
-        <main className="w-full flex-1 relative z-10 overflow-auto mt-2">
+        <main className="w-full flex-1 relative z-10 mt-2 overflow-y-hidden">
           {children}
         </main>
         <div className="shrink-0">

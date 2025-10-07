@@ -2,7 +2,7 @@ const cardDetalle = ({ card, onClick }) => {
   const url = `/cards/${card?.imagen?.toUpperCase()}.PNG`;
 
   return (
-    <div className="flex flex-col bg-fondo-claro rounded-lg shadow-xl overflow-hidden">
+    <div className="flex flex-col bg-fondo-claro rounded-lg shadow-xl overflow-hidden h-full">
       {/* Header */}
       <h2 className="text-center font-family-titulo text-[#36463E] mt-8 uppercase text-[20px] ">
         {card.nombre}
