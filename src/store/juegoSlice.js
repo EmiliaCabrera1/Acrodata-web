@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartas: [],
@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const juegoSlice = createSlice({
-  name: 'juego',
+  name: "juego",
   initialState,
   reducers: {
     _iniciarJuego: (state, action) => {
@@ -15,9 +15,13 @@ const juegoSlice = createSlice({
     _resetJuego: () => initialState,
     _setDificultad: (state, action) => {
       state.dificultad = action.payload;
-    }
+    },
+    _guardarJuego: (state, action) => {
+      state.cartas = action.payload;
+    },
   },
 });
 
-export const { _iniciarJuego, _resetJuego, _setDificultad } = juegoSlice.actions;
+export const { _iniciarJuego, _resetJuego, _setDificultad, _guardarJuego } =
+  juegoSlice.actions;
 export default juegoSlice.reducer;

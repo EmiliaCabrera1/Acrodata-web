@@ -23,7 +23,7 @@ const Encabezado = () => {
                 alt="Navbar"
               />
               <button
-                className={" absolute bottom-0 right-[2dvw]"}
+                className={"absolute bottom-0 right-[2dvw]"}
                 onClick={() => setExpanded(!expanded)}
               >
                 <img
@@ -41,7 +41,7 @@ const Encabezado = () => {
                 src="/img/navAbierta.svg"
                 alt="Navbar"
               />
-              <div className="w-[40dvw] h-auto z-20 bg-verde-intermedio shadow-custom-shadow rounded-2xl absolute top-18 right-[4dvw] p-3">
+              <div className="w-[40dvw] h-auto z-20 bg-verde-intermedio shadow-custom-shadow rounded-2xl absolute top-[70%] right-[2dvw] p-3">
                 <ul className="text-white px-3 mx-auto">
                   {secciones.map((seccion, index) => (
                     <li
