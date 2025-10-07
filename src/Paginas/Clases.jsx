@@ -6,9 +6,12 @@ import InfoClasesAbierta from "../Componentes/InfoClasesAbierta";
 import TextoCelClases from "../Componentes/TextoCelClases";
 import TextoPcClases from "../Componentes/TextoPcClases";
 import CardPcClases from "../Componentes/CardPcClases";
+import useClases from "../Hooks/useClases";
 
 const Clases = () => {
   const [claseAbierta, setClaseAbierta] = useState(null);
+
+  const clases = useClases();
 
   const infoClases = [
     {
@@ -18,8 +21,8 @@ const Clases = () => {
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
       infoExtendida:
         "Conectá desde casa con una clase online de acroyoga: calentamos, exploramos invertidas y unimos posturas básicas en un flow lleno de energía.",
-      precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
-      precioClase: "Precio por clase: $4.500",
+      precioMensual: `Precio mensual: ${clases?.particularOnline?.mensual} (4 clases mensuales)`,
+      precioClase: `Precio por clase: ${clases?.particularOnline?.porClase}`,
       fondo: "/img/fondoInfoChica1.svg",
     },
     {
@@ -29,8 +32,8 @@ const Clases = () => {
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
       infoExtendida:
         "Viví una práctica hecha a tu medida: en la clase presencial trabajamos en detalle tu cuerpo, tus objetivos y tu ritmo. Te acompaño paso a paso para que avances con seguridad, confianza y disfrute.",
-      precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
-      precioClase: "Precio por clase: $4.500",
+      precioMensual: `Precio mensual: ${clases?.particularPresencial?.mensual} (4 clases mensuales)`,
+      precioClase: `Precio por clase: ${clases?.particularPresencial?.porClase}`,
       fondo: "/img/fondoInfoChica2.svg",
     },
     {
@@ -40,8 +43,8 @@ const Clases = () => {
       info: "Clases personalizadas adaptadas a tus necesidades y nivel.",
       infoExtendida:
         "Compartí la energía del grupo en una clase de acroyoga donde todos los niveles tienen su lugar. Jugamos, aprendemos y fluimos juntos, combinando posturas y dinámicas que se adaptan tanto a quienes recién empiezan como a quienes ya tienen experiencia.",
-      precioMensual: "Precio mensual: $15.000 (4 clases mensuales)",
-      precioClase: "Precio por clase: $4.500",
+      precioMensual: `Precio mensual: ${clases?.grupal?.mensual} (8 clases mensuales)`,
+      precioClase: `Precio por clase: ${clases?.grupal?.porClase}`,
       fondo: "/img/fondoInfoChica2.svg",
     },
   ];

@@ -14,12 +14,12 @@ const useJuego = () => {
   const iniciarJuego = () => {
     const state = store.getState();
     const dificultad = state.juego?.dificultad;
-    const cards = state.data?.value;
+    const cards = state.data?.value?.cards;
 
     if (!cards || !dificultad) return;
 
     const cartasXDificultad = cards.filter((card) =>
-      dificultad.includes(card.dificultad)
+      dificultad.includes(card.dificultad.toLowerCase())
     );
     console.log(dificultad);
     console.log(cartasXDificultad.length, "cartas");

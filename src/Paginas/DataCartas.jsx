@@ -30,7 +30,9 @@ const DataCartas = () => {
               )
                 return false;
               if (dificultadValue === "Todas") return true;
-              return card.dificultad === dificultadValue.toLowerCase();
+              return (
+                card.dificultad.toLowerCase() === dificultadValue.toLowerCase()
+              );
             })
             .map((card, idx) => {
               return (
