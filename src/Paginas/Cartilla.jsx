@@ -2,35 +2,41 @@ import React from "react";
 
 const Cartilla = () => {
   return (
-    <div className="flex flex-col relative justify-self-center items-center justify-around oveerflow-hidden w-[100dvw]">
+    <div className="flex flex-col  justify-self-center items-center w-[100dvw] ">
       <h2 className="absolute font-family-titulo text-[20px] sm:text-[30px] text-[#36463E] top-10">
         {" "}
         FORMACION DE ACROYOGA
       </h2>
-      <img
-        className="ml-15 min-w-[120dvw] sm:hidden "
-        src="/img/cartillaCel.svg"
-        alt="cartilla info"
-      />
-      <div className="w-full h-full overflow-hidden hidden sm:flex -mt-25">
+      <div className=" bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]  h-auto  w-[70dvw] mt-[10dvh] p-10 text-[12px] sm:text-[18px] md:text-[20px] text-[#36463E]">
+        <p>
+          Somos Tania y Dani, y nos apasiona compartir el mundo del acroyoga.
+          Creamos una formación 100% presencial para profes, pensada para
+          acompañarte desde lo más esencial hasta lo más avanzado. Empezamos por
+          las bases y los fundamentos, puliendo cada detalle, y vamos creciendo
+          paso a paso hasta llegar a una práctica sólida y avanzada. Además,
+          profundizamos en el conocimiento del cuerpo, la biomecánica y las
+          herramientas necesarias para enseñar con claridad y seguridad.
+        </p>
+        <br />
+        <p>
+          También armamos una cartilla con todos los contenidos de la formación,
+          que podés comprar de manera independiente aunque no participes del
+          curso. Es importante aclarar que la cartilla no certifica como profe,
+          pero sí te brinda todo el material y el recorrido teórico de la
+          formación.
+        </p>
+        <br />
+        <p>
+          Escribinos para mas informacion sobre la formacion o comprar tu
+          cartilla.
+        </p>
         <img
-          className="  ml-15 min-w-[120dvw] sm:min-w-[100dvw] sm:ml-90 "
-          src="/img/cartillaPC.svg"
-          alt="cartilla info"
-        />
-      </div>
-      <a
-        href="https://wa.me/5493874153109?text=Hola%20Tania!%20Estuve%20en%20tu%20p%C3%A1gina%20y%20me%20interesar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20formacion%20y%20cartilla."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute top-100 right-35 sm:right-120 sm:top-130"
-      >
-        <img
+          className="-mb-10 mt-10 ml-auto block w-6 h-6 sm:w-10 sm:h-10 "
           src="/img/flechaChica.svg"
-          alt="Lflecha"
-          className="w-8 h-8 sm:w-10 sm:h-10"
+          alt="flecha"
         />
-      </a>
+        <img className="-mb-30 -ml-30" src="/img/imgCartilla.svg" alt="img" />
+      </div>
     </div>
   );
 };
