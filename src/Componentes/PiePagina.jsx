@@ -12,7 +12,11 @@ const PiePagina = () => {
           className="w-5 h-5 sm:w-8 sm:h-8"
         />
       </a>
-      <a href="mailto:tucorreo@gmail.com?subject=Consulta&body=Hola!%20Quisiera%20saber%20más%20sobre...">
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=dataacroyoga@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           src="/img/logoGmail.svg"
           alt="Logo Gmail"
@@ -31,7 +35,7 @@ const PiePagina = () => {
         />
       </a>
       <a
-        href="hhttps://www.facebook.com/profile.php?id=100069894100553"
+        href="https://www.facebook.com/profile.php?id=100069894100553"
         target="_blank"
         rel="noopener noreferrer"
       >

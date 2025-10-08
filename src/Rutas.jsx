@@ -7,6 +7,7 @@ import JuegoNuevo from "./Paginas/JuegoNuevo";
 import JuegoFinal from "./Paginas/JuegoFinal";
 import JuegoPortada from "./Paginas/JuegoPortada";
 import Juego from "./Paginas/Juego";
+import Cartilla from "./Paginas/Cartilla";
 
 const Rutas = () => {
   return (
@@ -19,6 +20,7 @@ const Rutas = () => {
       <Route path="/juegonuevo" element={<JuegoNuevo />} />
       <Route path="/juegofinal" element={<JuegoFinal />} />
       <Route path="/juego" element={<Juego />} />
+      <Route path="/cartilla" element={<Cartilla />} />
     </Routes>
   );
 };

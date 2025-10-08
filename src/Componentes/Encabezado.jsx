@@ -9,6 +9,7 @@ const Encabezado = () => {
     { nombre: "Cartas/Juego", link: "/juegoportada" },
     { nombre: "Clases", link: "/clases" },
     { nombre: "Contacto", link: "/contacto" },
+    { nombre: "Cartilla", link: "/cartilla" },
   ];
 
   return (

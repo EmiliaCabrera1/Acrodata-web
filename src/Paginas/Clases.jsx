@@ -50,9 +50,9 @@ const Clases = () => {
   ];
 
   return (
-    <div>
+    <div className="flex items-center justify-center mt-9">
       {/* CEL */}
-      <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mt-2 mb-1 flex sm:hidden ">
+      <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mt-2 mb-1 flex sm:hidden  ">
         Clases de Acroyoga
       </h2>
       <TextoCelClases />
