@@ -47,7 +47,7 @@ const DataCartas = () => {
           <h1 className="w-full h-full mx-auto mt-8">Cargando...</h1>
         )}
         {selectedCard && (
-          <div className="flex fixed sm:hidden inset-0 h-[60dvh] my-auto items-center justify-center bg-green-900/20 w-full">
+          <div className="flex fixed sm:hidden inset-0 h-full my-auto items-center justify-center bg-green-900/20 w-full">
             <CardDetalle
               card={selectedCard}
               onClick={() => setSelectedCard(null)}
