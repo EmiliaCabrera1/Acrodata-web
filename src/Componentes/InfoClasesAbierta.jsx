@@ -6,6 +6,9 @@ const InfoClasesAbierta = ({
   precioClase,
   accionCerrar,
 }) => {
+  const mensaje = `Hola Tania! Quisiera saber más sobre las ${titulo} - ${subtitulo}.`;
+  const urlWhatsApp = `https://wa.me/5493874153109?text=${encodeURIComponent(mensaje)}`;
+
   return (
     <div className="flex relative items-end m-2">
       <img
@@ -24,9 +27,14 @@ const InfoClasesAbierta = ({
         <h3 className="text-[12px] text-[#36463E]">{precioMensual}</h3>
         <h3 className="text-[12px] text-[#36463E]">{precioClase}</h3>
       </div>
-      <button className="text-white text-xs font-medium bg-[#36463E] absolute bottom-3 right-12 p-2 rounded-lg shadow-md active:shadow-inner">
+      <a
+        href={urlWhatsApp}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white text-xs font-medium bg-[#36463E] absolute bottom-3 right-12 p-2 rounded-lg shadow-md active:shadow-inner"
+      >
         Consultar
-      </button>
+      </a>
       <button onClick={() => accionCerrar()}>
         <img
           className="my-2 absolute right-[4dvw] bottom-[6dvh]"
