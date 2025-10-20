@@ -13,8 +13,9 @@ function App() {
   const data = useSelector((state) => state.data.value);
 
   useEffect(() => {
-    if (!data?.value?.cards || data?.value?.cards?.length === 0) {
+    if (!data?.cards || data?.cards?.length === 0) {
       console.log("fetching data...");
+      console.log("data?.value?.cards:", data?.value?.cards);
       dispatch(fetchSheetData());
     }
   }, [data, dispatch]);
