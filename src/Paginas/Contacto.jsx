@@ -3,7 +3,7 @@ import React from "react";
 const Contacto = () => {
   return (
     <div className="flex flex-col items-center justify-start sm:justify-center relative sm:mx-auto sm:my-auto ">
-      <h2 className="font-family-titulo text-[20px] sm:text-[26px] text-[#36463E] -ml-2 mb-3 mt-10 sm:mt-10 sm:mb-5 ">
+      <h2 className="font-family-titulo text-[20px] sm:text-[26px] text-[#36463E] -ml-2 mb-3 sm:mt-10 sm:mb-5 ">
         {" "}
         Hablemos y nos ponemos en movimiento juntos
       </h2>

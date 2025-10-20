@@ -49,7 +49,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
   }, [selectedDificultades]);
   return (
     <div className="h-full">
-      <h1 className="text-verde-oscuro mt-8 mb-7 text-center">
+      <h1 className="text-verde-oscuro mb-7 text-center">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h1>
       <div className="justify-center items-center flex">
