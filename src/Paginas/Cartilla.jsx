@@ -36,12 +36,12 @@ const Cartilla = () => {
           rel="noopener noreferrer"
         >
           <img
-            className="-mb-10 mt-10 ml-auto block w-6 h-6 sm:w-10 sm:h-10 "
+            className="-mb-15 mt-6 ml-auto block w-6 h-6 sm:w-10 sm:h-10 "
             src="/img/flechaChica.svg"
             alt="flecha"
           />
         </a>
-        <img className="-mb-30 -ml-30" src="/img/imgCartilla.svg" alt="img" />
+        <img className="-mb-30 -ml-20" src="/img/imgCartilla.svg" alt="img" />
       </div>
     </div>
   );
