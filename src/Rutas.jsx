@@ -3,8 +3,6 @@ import Clases from "./Paginas/Clases";
 import Principal from "./Paginas/Principal";
 import DataCartas from "./Paginas/DataCartas";
 import Contacto from "./Paginas/Contacto";
-import JuegoNuevo from "./Paginas/JuegoNuevo";
-import JuegoFinal from "./Paginas/JuegoFinal";
 import JuegoPortada from "./Paginas/JuegoPortada";
 import Juego from "./Paginas/Juego";
 import Cartilla from "./Paginas/Cartilla";
@@ -17,8 +15,6 @@ const Rutas = () => {
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/datacartas" element={<DataCartas />} />
       <Route path="/juegoportada" element={<JuegoPortada />} />
-      <Route path="/juegonuevo" element={<JuegoNuevo />} />
-      <Route path="/juegofinal" element={<JuegoFinal />} />
       <Route path="/juego" element={<Juego />} />
       <Route path="/cartilla" element={<Cartilla />} />
     </Routes>

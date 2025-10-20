@@ -2,7 +2,7 @@ const Checkbox = (props) => {
   const { name = "example", label = "EXAMPLE", checked, setChecked } = props;
 
   return (
-    <div className="flex ml-[20dvw] sm:ml-[40dvw]">
+    <div className="inline-flex">
       <label className="inline-flex items-center cursor-pointer relative">
         <input
           name={name}

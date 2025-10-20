@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../store/store";
 import {
   _iniciarJuego,
   _resetJuego,
@@ -10,13 +9,11 @@ import {
 const useJuego = () => {
   const dispatch = useDispatch();
 
-  const juego = useSelector((state) => state.juego.cartas);
+  const cards = useSelector((state) => state.data?.value?.cards);
+  const dificultad = useSelector((state) => state.juego.dificultad);
+  const cartasJuego = useSelector((state) => state.juego.cartas);
 
   const iniciarJuego = () => {
-    const state = store.getState();
-    const dificultad = state.juego?.dificultad;
-    const cards = state.data?.value?.cards;
-
     if (!cards || !dificultad) return;
 
     const cartasXDificultad = cards.filter((card) =>
@@ -47,7 +44,13 @@ const useJuego = () => {
     dispatch(_guardarJuego(cartasOrdenadas));
   };
 
-  return { iniciarJuego, resetJuego, setDificultad, juego, guardarJuego };
+  return {
+    iniciarJuego,
+    resetJuego,
+    setDificultad,
+    guardarJuego,
+    cartasJuego,
+  };
 };
 
 export default useJuego;

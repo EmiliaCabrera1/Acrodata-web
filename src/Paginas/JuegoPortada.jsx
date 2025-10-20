@@ -7,7 +7,7 @@ const JuegoPortada = () => {
         <a href="/datacartas">
           <img src="/img/cartasPortada.svg" alt="cartas img" />
         </a>
-        <a href="/juegonuevo">
+        <a href="/juego">
           <img src="/img/juegoPortada.svg" alt="cartas img" />
         </a>
       </div>

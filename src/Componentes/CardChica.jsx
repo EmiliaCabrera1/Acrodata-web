@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-const CardChica = ({ card, onClick, forma = "normal" }) => {
+const CardChica = ({ key, card, onClick, forma = "normal" }) => {
   const url = `/cards/${card.imagen.toUpperCase()}.PNG`;
 
   const size = {
@@ -11,6 +11,7 @@ const CardChica = ({ card, onClick, forma = "normal" }) => {
   return (
     <button
       onClick={onClick}
+      key={key}
       className={twMerge(
         size[forma],
         "p-1 flex items-center justify-center bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] cursor-pointer"

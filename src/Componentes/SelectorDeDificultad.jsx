@@ -1,20 +1,30 @@
 import { useState } from "react";
 import Checkbox from "../Componentes/Checkbox";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import useJuego from "../Hooks/useJuego";
 
-const dificultades = [
-  { name: "principiante", label: "PRINCIPIANTE" },
-  { name: "intermedio", label: "INTERMEDIO" },
-  { name: "avanzado", label: "AVANZADO" },
-  { name: "todas", label: "TODAS" },
-];
-
-const JuegoNuevo = () => {
+const SelectorDeDificultad = ({ setEtapa }) => {
   const [selectedDificultades, setSelectedDificultades] = useState([]);
   const { setDificultad, iniciarJuego } = useJuego();
-  const navegar = useNavigate();
+
+  const handleDificultad = (selectedDificultades) => {
+    if (selectedDificultades.length === 0) {
+      alert("Selecciona al menos una dificultad");
+      return;
+    }
+    const dificultad = selectedDificultades.filter((d) => d !== "todas");
+    console.log("Dificultades seleccionadas:", dificultad);
+    setDificultad(dificultad);
+    iniciarJuego();
+    setEtapa(1);
+  };
+
+  const dificultades = [
+    { name: "principiante", label: "PRINCIPIANTE" },
+    { name: "intermedio", label: "INTERMEDIO" },
+    { name: "avanzado", label: "AVANZADO" },
+    { name: "todas", label: "TODAS" },
+  ];
 
   const toggleDificultad = (name) => {
     setSelectedDificultades((prev) =>
@@ -22,17 +32,6 @@ const JuegoNuevo = () => {
         ? [...prev.filter((d) => d !== name)]
         : [...prev, name]
     );
-  };
-
-  const juego = () => {
-    if (selectedDificultades.length === 0) {
-      alert("Selecciona al menos una dificultad");
-      return;
-    }
-    const dificultad = selectedDificultades.filter((d) => d !== "todas");
-    setDificultad(dificultad);
-    iniciarJuego();
-    navegar("/juego");
   };
 
   useEffect(() => {
@@ -48,39 +47,38 @@ const JuegoNuevo = () => {
       }
     }
   }, [selectedDificultades]);
-
   return (
     <div className="relative h-full">
       <h1 className="text-verde-oscuro mt-8 mb-7 text-center">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h1>
-      <div className="flex flex-col gap-3 justify-center">
-        {dificultades.map((dificultad) => (
-          <Checkbox
-            key={dificultad.name}
-            name={dificultad.name}
-            label={dificultad.label}
-            checked={selectedDificultades.includes(dificultad.name)}
-            setChecked={() => {
-              if (dificultad.name === "todas") {
-                if (selectedDificultades.includes("todas")) {
-                  setSelectedDificultades([]);
+      <div className="justify-center items-center flex">
+        <div className="flex-col gap-3 inline-flex">
+          {dificultades.map((dificultad) => (
+            <Checkbox
+              key={dificultad.name}
+              name={dificultad.name}
+              label={dificultad.label}
+              checked={selectedDificultades.includes(dificultad.name)}
+              setChecked={() => {
+                if (dificultad.name === "todas") {
+                  if (selectedDificultades.includes("todas")) {
+                    setSelectedDificultades([]);
+                  } else {
+                    setSelectedDificultades(dificultades.map((d) => d.name));
+                  }
                 } else {
-                  setSelectedDificultades(dificultades.map((d) => d.name));
+                  toggleDificultad(dificultad.name);
                 }
-              } else {
-                toggleDificultad(dificultad.name);
-              }
-            }}
-          />
-        ))}
+              }}
+            />
+          ))}
+        </div>
       </div>
       <div className="flex flex-col items-center">
         <button
           className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow"
-          onClick={() => {
-            juego();
-          }}
+          onClick={() => handleDificultad(selectedDificultades)}
         >
           ELEGIR 5 CARTAS
         </button>
@@ -94,4 +92,4 @@ const JuegoNuevo = () => {
   );
 };
 
-export default JuegoNuevo;
+export default SelectorDeDificultad;
