@@ -60,7 +60,7 @@ const DataCartas = () => {
   const Detalle = () => {
     return (
       <>
-        <div className="hidden sm:flex sm:ml-4 h-[60dvh] mt-4">
+        <div className="hidden sm:flex sm:ml-4 h-[60vh] mt-4">
           {selectedCard && (
             <CardDetalle
               card={selectedCard}
@@ -81,7 +81,7 @@ const DataCartas = () => {
         DATA CARTAS
       </h2>
       <div className="flex w-full justify-end pr-4 sm:pr-8">
-        <div className="flex items-center  ml-8 w-[80dvw] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
+        <div className="flex items-center  ml-8 w-[80vw] mb-6 bg-fondo-claro p-2 rounded-xl shadow-custom-shadow">
           <img
             src="/img/lupa.svg"
             alt="Buscar"

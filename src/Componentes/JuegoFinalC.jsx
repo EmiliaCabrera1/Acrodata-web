@@ -29,7 +29,7 @@ const JuegoFinalC = () => {
           })}
         </div>
         {selectedCard && (
-          <div className="flex fixed inset-0 h-[80dvh] my-auto items-center justify-center bg-green-900/20 w-full">
+          <div className="flex fixed inset-0 h-[80vh] my-auto items-center justify-center bg-green-900/20 w-full">
             <CardDetalle
               card={selectedCard}
               onClick={() => setSelectedCard(null)}

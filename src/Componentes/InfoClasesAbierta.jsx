@@ -31,13 +31,13 @@ const InfoClasesAbierta = ({
         href={urlWhatsApp}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-white text-xs font-medium bg-[#36463E] absolute bottom-3 right-12 p-2 rounded-lg shadow-md active:shadow-inner"
+        className="text-white text-xs font-medium bg-[#36463E] absolute bottom-4 right-13 p-2 rounded-lg shadow-md active:shadow-inner"
       >
         Consultar
       </a>
       <button onClick={() => accionCerrar()}>
         <img
-          className="my-2 absolute right-[4dvw] bottom-[6dvh]"
+          className="my-2 absolute right-[4vw] bottom-[2vh]"
           src="/img/cerrarInfo.svg"
           alt="cruz"
         />

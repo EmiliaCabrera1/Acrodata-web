@@ -3,7 +3,7 @@ const ImgClases = () => {
     <div className="relative overflow-visible">
       <div className="m-2 w-40 h-100 sm:w-60 sm:h-150  bg-neutral-500/0 rounded-[10px] shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)] border border-neutral-500"></div>
       <img
-        className="w-[110dvw] h-auto absolute bottom-0 sm:-bottom-3 left-0"
+        className="w-[110vw] h-auto absolute bottom-0 sm:-bottom-3 left-0"
         src="/img/imgClases1.svg"
         alt="Img"
       />

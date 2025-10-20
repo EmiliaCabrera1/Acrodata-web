@@ -23,7 +23,7 @@ function App() {
     <>
       <div className="absolute inset-0 -z-10 bg-[url('/img/fondo.svg')] bg-cover bg-center bg-fixed" />
       <div className="absolute inset-0 -z-10 bg-[#36463E]/20" />
-      <div className="flex h-[100dvh] flex-col relative">
+      <div className="flex h-[100vh] flex-col relative">
         <div className="shrink-0">
           <Encabezado />
         </div>
