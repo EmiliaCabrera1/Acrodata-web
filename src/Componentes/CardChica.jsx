@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
 const CardChica = ({ key, card, onClick, forma = "normal" }) => {
-  const url = `/cards/${card.imagen.toUpperCase()}.PNG`;
+  const url = `/thumbnails/${card.imagen.toUpperCase()}.PNG`;
 
   const size = {
     normal: "w-18 h-24",
