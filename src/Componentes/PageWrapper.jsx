@@ -8,6 +8,7 @@ const pageVariants = {
 
 const PageWrapper = ({ children }) => (
   <motion.div
+    className="h-full"
     variants={pageVariants}
     initial="initial"
     animate="animate"

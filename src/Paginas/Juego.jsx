@@ -12,7 +12,7 @@ const Juego = () => {
   return (
     <div className="flex flex-row h-full w-full justify-between">
       {(!mobile || etapa === 0) && (
-        <div className="shrink-0 sm:w-1/3">
+        <div className="w-full h-full sm:w-1/3 relative">
           <SelectorDeDificultad setEtapa={setEtapa} />
         </div>
       )}
