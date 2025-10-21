@@ -3,8 +3,8 @@
 @theme {
   --breakpoint-xs: 400px;
   --color-verde-intermedio: #5f6f66;
-  --color-verde-oscuro: #36463E;
-  --color-fondo-claro: #EDE8DF;
+  --color-verde-oscuro: #36463e;
+  --color-fondo-claro: #ede8df;
   --color-fondo: rgba(54, 70, 62, 0.2);
   --shadow-custom-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --default-font-family: "Nunito", sans-serif;
@@ -23,4 +23,20 @@
   src: url("/font/Nunito-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
 }

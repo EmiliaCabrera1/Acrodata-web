@@ -17,25 +17,25 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <div className="absolute inset-0 -z-10 bg-[url('/img/fondo.svg')] bg-cover bg-center bg-fixed" />
       <div className="absolute inset-0 -z-10 bg-[#36463E]/20" />
       <div className="flex h-[100vh] flex-col relative">
-        <div className="shrink-0">
+        <div className="fixed top-0 left-0 w-full z-50">
           <Encabezado />
         </div>
-        <AnimatePresence mode="wait">
-          <main className="w-full flex-1 relative z-10 mt-4 overflow-auto mb-4">
+        <main className="flex-1 overflow-y-auto mt-[80px] mb-[60px]">
+          <AnimatePresence mode="wait">
             <PageWrapper>
               <Rutas />
             </PageWrapper>
-          </main>
-        </AnimatePresence>
-        <div className="shrink-0">
+          </AnimatePresence>
+        </main>
+        <div className="fixed bottom-0 left-0 w-full z-50">
           <Pie />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
