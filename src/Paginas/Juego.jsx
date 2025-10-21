@@ -10,7 +10,7 @@ const Juego = () => {
   console.log("mobile:", mobile, "etapa:", etapa);
 
   return (
-    <div className="flex flex-row h-full w-full justify-between">
+    <div className="flex flex-row w-full justify-between ">
       {(!mobile || etapa === 0) && (
         <div className="w-full h-full sm:w-1/3 relative">
           <SelectorDeDificultad setEtapa={setEtapa} />

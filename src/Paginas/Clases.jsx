@@ -50,7 +50,7 @@ const Clases = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mb-20">
       {/* CEL */}
       <h2 className="font-family-titulo text-[20px] text-[#36463E] mx-4 mb-1 flex sm:hidden  ">
         Clases de Acroyoga

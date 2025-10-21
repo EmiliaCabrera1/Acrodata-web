@@ -41,7 +41,7 @@ const Cartilla = () => {
             alt="flecha"
           />
         </a>
-        <img className="-mb-30 -ml-20" src="/img/imgCartilla.svg" alt="img" />
+        <img className="-mb-30 -ml-15" src="/img/imgCartilla.svg" alt="img" />
       </div>
     </div>
   );

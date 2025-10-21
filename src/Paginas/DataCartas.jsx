@@ -76,7 +76,7 @@ const DataCartas = () => {
   };
 
   return (
-    <>
+    <div className="mb-20">
       <h2 className="font-family-titulo text-[25px] sm:text-[35px] text-[#36463E] mx-4 mt-1 mb-1">
         DATA CARTAS
       </h2>
@@ -96,7 +96,7 @@ const DataCartas = () => {
         </div>
       </div>
       <DataCartasLayout Filtro={Filtro} Cartas={Cartas} Detalle={Detalle} />
-    </>
+    </div>
   );
 };
 

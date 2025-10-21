@@ -81,7 +81,7 @@ const Juego = ({ setEtapa }) => {
         })}
       </div>
       <button
-        className="w-72 h-12 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer"
+        className="w-72 h-12 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer mb-8"
         onClick={() => {
           if (cartasOrdenadas.length < 5) {
             alert("Debes ordenar las 5 cartas para continuar");
