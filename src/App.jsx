@@ -13,11 +13,8 @@ function App() {
   const data = useSelector((state) => state.data.value);
 
   useEffect(() => {
-    if (!data?.cards || data?.cards?.length === 0) {
-      console.log("fetching data...");
-      console.log("data?.value?.cards:", data?.value?.cards);
-      dispatch(fetchSheetData());
-    }
+    console.log("fetching data...");
+    dispatch(fetchSheetData());
   }, [data, dispatch]);
 
   return (
