@@ -7,7 +7,7 @@ const Cartilla = () => {
         {" "}
         FORMACION DE ACROYOGA
       </h2>
-      <div className="bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]  h-auto  w-[70vw] mt-4 p-10 text-[12px] sm:text-[18px] md:text-[20px] text-[#36463E]">
+      <div className="bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]  h-auto  w-[85vw] mt-4 mb-15 p-10 text-[12px] sm:text-[18px] md:text-[20px] text-[#36463E]">
         <p>
           Somos Tania y Dani, y nos apasiona compartir el mundo del acroyoga.
           Creamos una formación 100% presencial para profes, pensada para
