@@ -10,12 +10,11 @@ import Rutas from "./Rutas";
 
 function App() {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.data.value);
 
   useEffect(() => {
     console.log("fetching data...");
     dispatch(fetchSheetData());
-  }, [data, dispatch]);
+  }, []);
 
   return (
     <>
