@@ -22,7 +22,7 @@ const Juego = ({ setEtapa }) => {
   return (
     <div className="flex flex-col items-center">
       <a
-        className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer"
+        className="w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer"
         href="/juego"
       >
         CAMBIAR DIFICULTAD
@@ -81,7 +81,7 @@ const Juego = ({ setEtapa }) => {
         })}
       </div>
       <button
-        className="mb-8 w-72 h-12 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer"
+        className="w-72 h-12 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer"
         onClick={() => {
           if (cartasOrdenadas.length < 5) {
             alert("Debes ordenar las 5 cartas para continuar");

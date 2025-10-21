@@ -25,7 +25,7 @@ function App() {
           <Encabezado />
         </div>
         <AnimatePresence mode="wait">
-          <main className="w-full flex-1 relative z-10 mt-4 overflow-auto">
+          <main className="w-full flex-1 relative z-10 mt-4 overflow-auto mb-4">
             <PageWrapper>
               <Rutas />
             </PageWrapper>
