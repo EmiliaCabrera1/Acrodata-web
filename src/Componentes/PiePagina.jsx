@@ -1,6 +1,6 @@
 const PiePagina = () => {
   return (
-    <footer className="fixed bottom-0 w-full flex items-center justify-center bg-[#5F6F66] p-4 gap-4 inset-shadow">
+    <footer className="z-50 fixed bottom-0 w-full flex items-center justify-center bg-[#5F6F66] p-4 gap-4 inset-shadow">
       <a
         href="https://www.instagram.com/acroyoga.data/"
         target="_blank"
