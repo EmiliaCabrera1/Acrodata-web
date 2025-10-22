@@ -6,7 +6,7 @@ const InfoClasesCerrada = ({ id, fondo, titulo, subtitulo, onClick }) => {
       id={id}
     >
       <img src={fondo} alt="fondo" />
-      <div className="absolute top-2 left-4">
+      <div className="absolute top-2 left-4 text-left w-full">
         <h2 className="text-[12px] text-[#36463E] font-semibold ">{titulo}</h2>
         <h3 className="text-[12px] text-[#36463E]">{subtitulo}</h3>
       </div>

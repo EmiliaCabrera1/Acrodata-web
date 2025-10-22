@@ -20,6 +20,8 @@ const Clases = () => {
     const userAgent = navigator.userAgent;
     const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
     setIsSafari(isSafariBrowser);
+    console.log("User Agent:", userAgent);
+    console.log("Is Safari:", isSafariBrowser);
   }, []);
 
   const infoClases = [
@@ -85,7 +87,9 @@ const Clases = () => {
         )}
         {isSafari ? (
           // Animación CSS nativa para Safari
-          <div className={`transition-opacity duration-100 ${claseAbierta ? 'opacity-100' : 'opacity-0'}`}>
+          <div
+            className={`transition-opacity duration-100 ${claseAbierta ? "opacity-100" : "opacity-0"}`}
+          >
             {claseAbierta && (
               <>
                 <InfoClasesAbierta
@@ -120,16 +124,16 @@ const Clases = () => {
           </div>
         ) : (
           // Animación Framer Motion para otros navegadores
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence mode="wait" initial={true}>
             {claseAbierta && (
               <motion.div
                 key={claseAbierta.id}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ 
+                transition={{
                   duration: 0.1,
-                  exit: { duration: 0.00 }
+                  exit: { duration: 0.0 },
                 }}
               >
                 <InfoClasesAbierta

@@ -2,7 +2,7 @@ import React from "react";
 
 const Cartilla = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full max-w-full overflow-x-hidden">
+    <div className="flex flex-col justify-center items-center w-full max-w-full overflow-x-hidden mb-8">
       <h2 className="font-family-titulo text-[20px] sm:text-[30px] text-[#36463E]">
         FORMACION DE ACROYOGA
       </h2>
@@ -42,10 +42,10 @@ const Cartilla = () => {
           />
         </a>
         <div className="flex justify-start mt-4 -ml-12 -mb-20 sm:-ml-8">
-          <img 
-            className="max-w-[90%] h-auto" 
-            src="/img/imgCartilla.svg" 
-            alt="img" 
+          <img
+            className="max-w-[90%] h-auto"
+            src="/img/imgCartilla.svg"
+            alt="img"
           />
         </div>
       </div>

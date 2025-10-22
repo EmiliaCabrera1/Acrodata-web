@@ -7,7 +7,6 @@ import { useState } from "react";
 const Juego = () => {
   const mobile = window.innerWidth < 640;
   const [etapa, setEtapa] = useState(0);
-  console.log("mobile:", mobile, "etapa:", etapa);
 
   return (
     <div className="flex flex-row w-full justify-between ">
@@ -17,7 +16,7 @@ const Juego = () => {
         </div>
       )}
       {((!mobile && etapa === 0) || etapa === 1) && (
-        <div className="flex sm:flex-2 sm:w-1/2 justify-center">
+        <div className="flex sm:flex-2 sm:w-1/2 justify-center mb-8">
           <JuegoC setEtapa={setEtapa} />
         </div>
       )}
