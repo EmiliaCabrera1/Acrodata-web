@@ -40,3 +40,29 @@ main {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
 }
+
+/* Safari compatibility fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Safari-specific styles */
+  .transition-opacity {
+    -webkit-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* Prevent Safari bounce scroll issues */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  /* Fix Safari animation performance */
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Prevent Safari from interfering with animations */
+  .motion-safe\:animate-none {
+    animation: none !important;
+  }
+}

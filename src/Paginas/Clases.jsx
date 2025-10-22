@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ImgClases from "../Componentes/ImgClases";
 import ImgClasesAbierta from "../Componentes/ImgClasesAbierta";
@@ -11,8 +11,16 @@ import useClases from "../Hooks/useClases";
 
 const Clases = () => {
   const [claseAbierta, setClaseAbierta] = useState(null);
+  const [isSafari, setIsSafari] = useState(false);
 
   const clases = useClases();
+
+  useEffect(() => {
+    // Detectar Safari
+    const userAgent = navigator.userAgent;
+    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
+    setIsSafari(isSafariBrowser);
+  }, []);
 
   const infoClases = [
     {
@@ -75,48 +83,86 @@ const Clases = () => {
             </div>
           </>
         )}
-        <AnimatePresence mode="wait" initial={false}>
-          {claseAbierta && (
-            <motion.div
-              key={claseAbierta.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ 
-                duration: 0.1,
-                exit: { duration: 0.00 }
-              }}
-            >
-              <InfoClasesAbierta
-                titulo={claseAbierta.titulo}
-                subtitulo={claseAbierta.subtitulo}
-                info={claseAbierta.info}
-                precioMensual={claseAbierta.precioMensual}
-                precioClase={claseAbierta.precioClase}
-                accionCerrar={() => setClaseAbierta(null)}
-              />
-              <div className="flex relative">
-                <ImgClasesAbierta />
-                <div>
-                  {infoClases
-                    .filter((clase) => {
-                      return clase.id !== claseAbierta.id;
-                    })
-                    .map((clase, id) => (
-                      <InfoClasesCerrada
-                        key={clase.id}
-                        id={clase.id}
-                        fondo={`img/fondoInfoChica2.svg`}
-                        titulo={clase.titulo}
-                        subtitulo={clase.subtitulo}
-                        onClick={() => setClaseAbierta(clase)}
-                      />
-                    ))}
+        {isSafari ? (
+          // Animación CSS nativa para Safari
+          <div className={`transition-opacity duration-100 ${claseAbierta ? 'opacity-100' : 'opacity-0'}`}>
+            {claseAbierta && (
+              <>
+                <InfoClasesAbierta
+                  titulo={claseAbierta.titulo}
+                  subtitulo={claseAbierta.subtitulo}
+                  info={claseAbierta.info}
+                  precioMensual={claseAbierta.precioMensual}
+                  precioClase={claseAbierta.precioClase}
+                  accionCerrar={() => setClaseAbierta(null)}
+                />
+                <div className="flex relative">
+                  <ImgClasesAbierta />
+                  <div>
+                    {infoClases
+                      .filter((clase) => {
+                        return clase.id !== claseAbierta.id;
+                      })
+                      .map((clase, id) => (
+                        <InfoClasesCerrada
+                          key={clase.id}
+                          id={clase.id}
+                          fondo={`img/fondoInfoChica2.svg`}
+                          titulo={clase.titulo}
+                          subtitulo={clase.subtitulo}
+                          onClick={() => setClaseAbierta(clase)}
+                        />
+                      ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </>
+            )}
+          </div>
+        ) : (
+          // Animación Framer Motion para otros navegadores
+          <AnimatePresence mode="wait" initial={false}>
+            {claseAbierta && (
+              <motion.div
+                key={claseAbierta.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ 
+                  duration: 0.1,
+                  exit: { duration: 0.00 }
+                }}
+              >
+                <InfoClasesAbierta
+                  titulo={claseAbierta.titulo}
+                  subtitulo={claseAbierta.subtitulo}
+                  info={claseAbierta.info}
+                  precioMensual={claseAbierta.precioMensual}
+                  precioClase={claseAbierta.precioClase}
+                  accionCerrar={() => setClaseAbierta(null)}
+                />
+                <div className="flex relative">
+                  <ImgClasesAbierta />
+                  <div>
+                    {infoClases
+                      .filter((clase) => {
+                        return clase.id !== claseAbierta.id;
+                      })
+                      .map((clase, id) => (
+                        <InfoClasesCerrada
+                          key={clase.id}
+                          id={clase.id}
+                          fondo={`img/fondoInfoChica2.svg`}
+                          titulo={clase.titulo}
+                          subtitulo={clase.subtitulo}
+                          onClick={() => setClaseAbierta(clase)}
+                        />
+                      ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
       </div>
       {/* PC */}
       <div className="hidden sm:flex flex-col ml-8">
