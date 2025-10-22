@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ImgClases from "../Componentes/ImgClases";
 import ImgClasesAbierta from "../Componentes/ImgClasesAbierta";
 import InfoClasesCerrada from "../Componentes/InfoClasesCerrada";
@@ -74,9 +75,18 @@ const Clases = () => {
             </div>
           </>
         )}
-        {claseAbierta && (
-          <>
-            <div>
+        <AnimatePresence mode="wait" initial={false}>
+          {claseAbierta && (
+            <motion.div
+              key={claseAbierta.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ 
+                duration: 0.1,
+                exit: { duration: 0.00 }
+              }}
+            >
               <InfoClasesAbierta
                 titulo={claseAbierta.titulo}
                 subtitulo={claseAbierta.subtitulo}
@@ -104,9 +114,9 @@ const Clases = () => {
                     ))}
                 </div>
               </div>
-            </div>
-          </>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       {/* PC */}
       <div className="hidden sm:flex flex-col ml-8">

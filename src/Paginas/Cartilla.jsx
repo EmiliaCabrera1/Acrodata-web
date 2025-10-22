@@ -2,12 +2,11 @@ import React from "react";
 
 const Cartilla = () => {
   return (
-    <div className="flex flex-col  justify-self-center items-center w-[100vw] ">
+    <div className="flex flex-col justify-center items-center w-full max-w-full overflow-x-hidden">
       <h2 className="font-family-titulo text-[20px] sm:text-[30px] text-[#36463E]">
-        {" "}
         FORMACION DE ACROYOGA
       </h2>
-      <div className="bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]  h-auto  w-[85vw] mt-4 mb-30 p-8 text-[12px] sm:text-[18px] md:text-[20px] text-[#36463E]">
+      <div className="bg-fondo-claro rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] h-auto w-[85vw] max-w-4xl mt-4 mb-8 p-8 text-[12px] sm:text-[18px] md:text-[20px] text-[#36463E] relative">
         <p>
           Somos Tania y Dani, y nos apasiona compartir el mundo del acroyoga.
           Creamos una formación 100% presencial para profes, pensada para
@@ -34,14 +33,21 @@ const Cartilla = () => {
           href="https://wa.me/5493874153109?text=Hola%20Tania!%20quer%C3%ADa%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20formaci%C3%B3n%20de%20acroyoga%20y%20la%20cartilla"
           target="_blank"
           rel="noopener noreferrer"
+          className="block mt-6 ml-auto w-fit"
         >
           <img
-            className="-mb-15 mt-6 ml-auto block w-6 h-6 sm:w-10 sm:h-10 "
+            className="w-6 h-6 sm:w-10 sm:h-10"
             src="/img/flechaChica.svg"
             alt="flecha"
           />
         </a>
-        <img className="-mb-30 -ml-15" src="/img/imgCartilla.svg" alt="img" />
+        <div className="flex justify-start mt-4 -ml-12 -mb-20 sm:-ml-8">
+          <img 
+            className="max-w-[90%] h-auto" 
+            src="/img/imgCartilla.svg" 
+            alt="img" 
+          />
+        </div>
       </div>
     </div>
   );

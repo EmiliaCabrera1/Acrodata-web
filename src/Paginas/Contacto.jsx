@@ -7,7 +7,7 @@ const Contacto = () => {
         {" "}
         Hablemos y nos ponemos en movimiento juntos
       </h2>
-      <div className="flex gap-20 sm:hidden ">
+      <div className="flex gap-20 sm:hidden overflow-x-hidden">
         <div className=" ml-4 sm:ml-0 h-full flex flex-col">
           <button className="-mr-4 ">
             {" "}

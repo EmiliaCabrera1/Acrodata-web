@@ -48,7 +48,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
     }
   }, [selectedDificultades]);
   return (
-    <div className="h-full">
+    <div className="h-full relative">
       <h1 className="text-verde-oscuro mb-7 text-center">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h1>
@@ -83,11 +83,13 @@ const SelectorDeDificultad = ({ setEtapa }) => {
           ELEGIR 5 CARTAS
         </button>
       </div>
-      <img
-        className="absolute h-2/3 w-full -bottom-2 left-0 -z-10 object-fit"
-        src="/img/fondoJuegoNuevo.svg"
-        alt="Fondo"
-      />
+      <div className=" flex justify-center">
+        <img
+          className="h-70 w-full max-w-md object-contain"
+          src="/img/fondoJuegoNuevo.svg"
+          alt="Fondo"
+        />
+      </div>
     </div>
   );
 };
