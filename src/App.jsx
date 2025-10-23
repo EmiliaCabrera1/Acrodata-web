@@ -12,9 +12,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("fetching data...");
     dispatch(fetchSheetData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="flex flex-col min-h-screen">

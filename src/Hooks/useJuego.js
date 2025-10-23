@@ -19,8 +19,7 @@ const useJuego = () => {
     const cartasXDificultad = cards.filter((card) =>
       dificultad.includes(card.dificultad.toLowerCase())
     );
-    console.log(dificultad);
-    console.log(cartasXDificultad.length, "cartas");
+    
     const cartasRandom = [];
     while (cartasRandom.length < 5 && cartasXDificultad.length > 0) {
       const carta =

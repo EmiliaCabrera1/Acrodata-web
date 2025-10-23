@@ -7,7 +7,6 @@ export const fetchSheetData = createAsyncThunk(
   async () => {
     const res = await fetch(url);
     const json = await res.json();
-    console.log(json);
     return json;
   }
 );

@@ -13,7 +13,6 @@ const SelectorDeDificultad = ({ setEtapa }) => {
       return;
     }
     const dificultad = selectedDificultades.filter((d) => d !== "todas");
-    console.log("Dificultades seleccionadas:", dificultad);
     setDificultad(dificultad);
     iniciarJuego();
     setEtapa(1);
