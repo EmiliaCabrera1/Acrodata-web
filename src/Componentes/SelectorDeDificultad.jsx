@@ -47,12 +47,15 @@ const SelectorDeDificultad = ({ setEtapa }) => {
     }
   }, [selectedDificultades]);
   return (
-    <div className="h-full relative">
-      <h1 className="text-verde-oscuro mb-7 text-center">
+    <div className="sm:flex-row text-center">
+      <h1 className="text-verde-oscuro font-family-titulo text-[26px] hidden sm:text-left sm:flex sm:ml-14">
+        DATA JUEGO
+      </h1>
+      <h1 className="text-verde-oscuro mb-7 text-center sm:flex sm:ml-14">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h1>
-      <div className="justify-center items-center flex">
-        <div className="flex-col gap-3 inline-flex">
+      <div className="flex justify-center items-center sm:items-left">
+        <div className="inline-flex flex-col gap-3 sm:flex sm:flex-row">
           {dificultades.map((dificultad) => (
             <Checkbox
               key={dificultad.name}
@@ -74,20 +77,20 @@ const SelectorDeDificultad = ({ setEtapa }) => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center">
+      <div>
         <button
-          className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow"
+          className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow sm:w-50 sm:mb-8 cursor-pointer"
           onClick={() => handleDificultad(selectedDificultades)}
         >
           ELEGIR 5 CARTAS
         </button>
-      </div>
-      <div className=" flex justify-center">
-        <img
-          className="h-70 w-full max-w-md object-contain"
-          src="/img/fondoJuegoNuevo.svg"
-          alt="Fondo"
-        />
+        <div className="flex justify-center sm:hidden">
+          <img
+            className="h-70 w-full max-w-md object-contain"
+            src="/img/fondoJuegoNuevo.svg"
+            alt="Fondo"
+          />
+        </div>
       </div>
     </div>
   );

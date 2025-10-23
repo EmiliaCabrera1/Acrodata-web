@@ -1,8 +1,8 @@
 import useJuego from "../Hooks/useJuego";
 import CardChica from "./CardChica";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Juego = ({ setEtapa }) => {
+const Juego = ({ etapa, setEtapa }) => {
   const { iniciarJuego, guardarJuego, cartasJuego } = useJuego();
 
   const [cartasOrdenadas, setCartasOrdenadas] = useState([]);
@@ -19,23 +19,31 @@ const Juego = ({ setEtapa }) => {
     ]);
   };
 
+  useEffect(() => {
+    etapa === 1 && setCartasOrdenadas([]);
+  }, [etapa]);
+
   return (
     <div className="flex flex-col items-center">
-      <a
-        className="w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer"
-        href="/juego"
-      >
-        CAMBIAR DIFICULTAD
-      </a>
-      <button
-        className="mt-4 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer"
-        onClick={() => {
-          setCartasOrdenadas([]);
-          iniciarJuego();
-        }}
-      >
-        ELEGIR 5 CARTAS NUEVAS
-      </button>
+      <div>
+        <a
+          className="w-72 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer sm:hidden"
+          href="/juego"
+        >
+          CAMBIAR DIFICULTAD
+        </a>
+      </div>
+      <div>
+        <button
+          className="mt-4 w-72 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer sm:hidden"
+          onClick={() => {
+            setCartasOrdenadas([]);
+            iniciarJuego();
+          }}
+        >
+          ELEGIR 5 CARTAS NUEVAS
+        </button>
+      </div>
       <div className="flex flex-row w-full h-full p-4 gap-10 items-center flex-wrap justify-center">
         {cartasJuego.map((card, idx) => {
           return (
@@ -80,19 +88,21 @@ const Juego = ({ setEtapa }) => {
           );
         })}
       </div>
-      <button
-        className="w-72 h-12 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer mb-8"
-        onClick={() => {
-          if (cartasOrdenadas.length < 5) {
-            alert("Debes ordenar las 5 cartas para continuar");
-            return;
-          }
-          guardarJuego(cartasOrdenadas);
-          setEtapa(2);
-        }}
-      >
-        CONTINUAR
-      </button>
+      <div>
+        <button
+          className="w-72 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer my-8 sm:h-12 sm:w-50"
+          onClick={() => {
+            if (cartasOrdenadas.length < 5) {
+              alert("Debes ordenar las 5 cartas para continuar");
+              return;
+            }
+            guardarJuego(cartasOrdenadas);
+            setEtapa(2);
+          }}
+        >
+          CONTINUAR
+        </button>
+      </div>
     </div>
   );
 };
