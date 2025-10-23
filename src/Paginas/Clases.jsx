@@ -101,7 +101,7 @@ const Clases = () => {
       </h2>
       <TextoCelClases />
       <div className="flex justify-center relative sm:hidden">
-        {!claseAbierta && (
+        {!claseAbierta ? (
           <>
             <ImgClases />
             <div>
@@ -117,25 +117,24 @@ const Clases = () => {
               ))}
             </div>
           </>
-        )}
-        {isSafari ? (
-          <div className={`transition-opacity duration-100 ${claseAbierta ? "opacity-100" : "opacity-0"}`}>
-            {renderClaseAbierta()}
-          </div>
         ) : (
-          <AnimatePresence mode="wait" initial={false}>
-            {claseAbierta && (
+          isSafari ? (
+            <div className="w-full">
+              {renderClaseAbierta()}
+            </div>
+          ) : (
+            <AnimatePresence mode="wait">
               <motion.div
                 key={claseAbierta.id}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.1, exit: { duration: 0 } }}
+                transition={{ duration: 0.2 }}
               >
                 {renderClaseAbierta()}
               </motion.div>
-            )}
-          </AnimatePresence>
+            </AnimatePresence>
+          )
         )}
       </div>
       {/* PC */}
