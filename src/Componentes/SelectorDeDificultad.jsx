@@ -48,13 +48,13 @@ const SelectorDeDificultad = ({ setEtapa }) => {
   }, [selectedDificultades]);
   return (
     <div className="sm:flex-row text-center">
-      <h1 className="text-verde-oscuro font-family-titulo text-[26px] hidden sm:text-left sm:flex sm:ml-14">
+      <h2 className="text-verde-oscuro font-family-titulo text-[26px] hidden sm:text-left sm:flex sm:pl-4">
         DATA JUEGO
-      </h1>
-      <h1 className="text-verde-oscuro mb-7 text-center sm:flex sm:ml-14">
+      </h2>
+      <h2 className="text-verde-oscuro mb-7 text-center sm:text-left sm:flex sm:pl-4">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
-      </h1>
-      <div className="flex justify-center items-center sm:items-left">
+      </h2>
+      <div className="flex justify-center items-center sm:items-start sm:justify-start sm:pl-4">
         <div className="inline-flex flex-col gap-3 sm:flex sm:flex-row">
           {dificultades.map((dificultad) => (
             <Checkbox
@@ -77,7 +77,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="flex justify-center">
         <button
           className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow sm:w-50 sm:mb-8 cursor-pointer"
           onClick={() => handleDificultad(selectedDificultades)}

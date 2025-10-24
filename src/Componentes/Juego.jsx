@@ -24,10 +24,10 @@ const Juego = ({ etapa, setEtapa }) => {
   }, [etapa]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <div>
         <a
-          className="w-72 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer sm:hidden"
+          className="w-72 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer sm:hidden py-2"
           href="/juego"
         >
           CAMBIAR DIFICULTAD
@@ -35,7 +35,7 @@ const Juego = ({ etapa, setEtapa }) => {
       </div>
       <div>
         <button
-          className="mt-4 w-72 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer sm:hidden"
+          className="mt-4 w-72 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer sm:hidden py-2"
           onClick={() => {
             setCartasOrdenadas([]);
             iniciarJuego();

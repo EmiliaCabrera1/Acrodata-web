@@ -139,9 +139,9 @@ const Clases = () => {
       </div>
       {/* PC */}
       <div className="hidden sm:flex flex-col ml-8">
-        <h2 className="font-family-titulo text-[30px] text-[#36463E] m-4">
+        <h1 className="font-family-titulo text-[30px] text-[#36463E] m-4">
           ¡Volá con nosotros en las clases de AcroYoga!
-        </h2>
+        </h1>
         <div className="flex flex-row">
           <ImgClases />
           <div className="flex flex-col">
