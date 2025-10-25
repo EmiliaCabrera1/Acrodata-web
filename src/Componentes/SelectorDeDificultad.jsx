@@ -54,30 +54,32 @@ const SelectorDeDificultad = ({ setEtapa }) => {
       <h2 className="text-verde-oscuro mb-7 text-center sm:text-left sm:flex sm:pl-4">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h2>
+
       <div className="flex justify-center items-center sm:items-start sm:justify-start sm:pl-4">
-        <div className="inline-flex flex-col gap-3 sm:flex sm:flex-row">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {dificultades.map((dificultad) => (
-            <Checkbox
-              key={dificultad.name}
-              name={dificultad.name}
-              label={dificultad.label}
-              checked={selectedDificultades.includes(dificultad.name)}
-              setChecked={() => {
-                if (dificultad.name === "todas") {
-                  if (selectedDificultades.includes("todas")) {
-                    setSelectedDificultades([]);
+            <div key={dificultad.name} className="flex items-center gap-3">
+              <Checkbox
+                name={dificultad.name}
+                label={dificultad.label}
+                checked={selectedDificultades.includes(dificultad.name)}
+                setChecked={() => {
+                  if (dificultad.name === "todas") {
+                    if (selectedDificultades.includes("todas")) {
+                      setSelectedDificultades([]);
+                    } else {
+                      setSelectedDificultades(dificultades.map((d) => d.name));
+                    }
                   } else {
-                    setSelectedDificultades(dificultades.map((d) => d.name));
+                    toggleDificultad(dificultad.name);
                   }
-                } else {
-                  toggleDificultad(dificultad.name);
-                }
-              }}
-            />
+                }}
+              />
+            </div>
           ))}
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row justify-center">
+      <div className="flex flex-col sm:flex-row justify-center items-center">
         <button
           className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow sm:w-50 sm:mb-8 cursor-pointer"
           onClick={() => handleDificultad(selectedDificultades)}
