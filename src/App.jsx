@@ -21,7 +21,10 @@ function App() {
       <div className="absolute inset-0 -z-10 bg-[#36463E]/20" />
       <div className="flex h-[100vh] flex-col relative">
         <Encabezado />
-        <main className="flex-1 overflow-y-auto mt-8 mb-[60px]">
+        <main
+          className="flex-1 overflow-y-auto mt-8 mb-[60px]"
+          style={{ height: "calc(100vh - var(--pie-height))" }}
+        >
           <AnimatePresence mode="wait">
             <PageWrapper>
               <Rutas />
