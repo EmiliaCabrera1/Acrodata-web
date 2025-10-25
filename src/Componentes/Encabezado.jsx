@@ -17,7 +17,7 @@ const Encabezado = () => {
         <img
           src="/img/logoNav.svg"
           alt="Logo"
-          className="absolute bottom-[20%] left-[2vw] h-[60%]"
+          className="absolute bottom-[20%] left-[10vw] h-[60%] sm:h-[90%] sm:bottom-[5%]"
         />
         <div className="sm:hidden w-full">
           {!expanded && (
