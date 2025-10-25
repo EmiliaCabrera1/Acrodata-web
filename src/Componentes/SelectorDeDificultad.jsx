@@ -77,7 +77,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex flex-col sm:flex-row justify-center">
         <button
           className="mt-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow sm:w-50 sm:mb-8 cursor-pointer"
           onClick={() => handleDificultad(selectedDificultades)}
