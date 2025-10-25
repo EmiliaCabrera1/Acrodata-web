@@ -14,6 +14,11 @@ const Encabezado = () => {
   return (
     <>
       <nav className="flex relative">
+        <img
+          src="/img/logoNav.svg"
+          alt="Logo"
+          className="absolute bottom-[20%] left-[2vw] h-[60%]"
+        />
         <div className="sm:hidden w-full">
           {!expanded && (
             <>
@@ -21,11 +26,6 @@ const Encabezado = () => {
                 className="w-full h-auto"
                 src="/img/navCerrada.svg"
                 alt="Navbar"
-              />
-              <img
-                src="/img/logoNav.svg"
-                alt="Logo"
-                className="absolute bottom-[2vh] left-[9vw] w-[19vw] h-auto sm:left-[35vw] sm:w-[50vw]"
               />
               <button
                 className={"absolute bottom-0 right-[2vw]"}
@@ -45,11 +45,6 @@ const Encabezado = () => {
                 className="w-full h-auto"
                 src="/img/navAbierta.svg"
                 alt="Navbar"
-              />
-              <img
-                src="/img/logoNav.svg"
-                alt="Logo"
-                className="absolute bottom-0 left-[2vw] w-[20vw] h-auto"
               />
               <div className="w-[40vw] h-auto z-20 bg-verde-intermedio shadow-custom-shadow rounded-2xl absolute top-[70%] right-[2vw] p-3">
                 <ul className="text-white px-3 mx-auto">
@@ -76,12 +71,7 @@ const Encabezado = () => {
             </>
           )}
         </div>
-        <div className="hidden sm:flex w-full h-20 bg-verde-intermedio shadow-custom-shadow justify-between items-center pr-8">
-          <img
-            src="/img/logoNav.svg"
-            alt="Logo"
-            className="ml-8 h-16 w-auto"
-          />
+        <div className="hidden sm:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8">
           <div className="flex">
             {secciones.map((seccion, index) => (
               <h1 key={index} className="text-white text-lg px-2 my-4">
