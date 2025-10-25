@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const Encabezado = () => {
   const [expanded, setExpanded] = useState(false);
@@ -23,7 +24,7 @@ const Encabezado = () => {
           {!expanded && (
             <>
               <img
-                className="w-full h-auto"
+                className="w-full h-auto object-fill"
                 src="/img/navCerrada.svg"
                 alt="Navbar"
               />
@@ -72,13 +73,11 @@ const Encabezado = () => {
           )}
         </div>
         <div className="hidden sm:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8">
-          <div className="flex">
-            {secciones.map((seccion, index) => (
-              <h1 key={index} className="text-white text-lg px-2 my-4">
-                <a href={seccion.link}>{seccion.nombre}</a>
-              </h1>
-            ))}
-          </div>
+          {secciones.map((seccion, index) => (
+            <h1 key={index} className="text-white text-lg px-2 my-4">
+              <a href={seccion.link}>{seccion.nombre}</a>
+            </h1>
+          ))}
         </div>
       </nav>
     </>

@@ -20,10 +20,8 @@ function App() {
       <div className="absolute inset-0 -z-10 bg-[url('/img/fondo.svg')] bg-cover bg-center bg-fixed" />
       <div className="absolute inset-0 -z-10 bg-[#36463E]/20" />
       <div className="flex h-[100vh] flex-col relative">
-        <div className="fixed top-0 left-0 w-full z-50">
-          <Encabezado />
-        </div>
-        <main className="flex-1 overflow-y-auto mt-[80px] mb-[60px]">
+        <Encabezado />
+        <main className="flex-1 overflow-y-auto mt-8 mb-[60px]">
           <AnimatePresence mode="wait">
             <PageWrapper>
               <Rutas />

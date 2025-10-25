@@ -2,7 +2,7 @@ import React from "react";
 
 const Cartilla = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full max-w-full overflow-x-hidden mb-8">
+    <div className="flex flex-col justify-center items-center w-full max-w-full overflow-hidden mb-8">
       <h2 className="font-family-titulo text-[20px] sm:text-[30px] text-[#36463E]">
         FORMACION DE ACROYOGA
       </h2>

@@ -9,7 +9,7 @@ const Juego = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-between min-h-[calc(100vh-80px)] sm:min-h-0 items-center">
+      <div className="flex flex-row justify-between sm:min-h-0 items-center">
         <div className="flex flex-col mx-auto sm:w-1/2 w-full justify-center sm:justify-start">
           {(!mobile || etapa === 0) && (
             <div className="flex items-center justify-center">
