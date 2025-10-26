@@ -8,7 +8,7 @@ const JuegoFinalC = ({ etapa }) => {
   const [selectedCard, setSelectedCard] = useState(null);
 
   return (
-    <div className="mx-4 text-center">
+    <div className="w-[100vw] flex text-center px-2">
       <div className="flex flex-col items-center">
         <a
           className="mb-6 w-72 h-12 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow flex justify-center items-center cursor-pointer sm:hidden"
