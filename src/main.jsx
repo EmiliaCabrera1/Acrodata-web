@@ -6,6 +6,15 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./store/store";
 import { PersistGate } from "redux-persist/integration/react";
 
+function setVh() {
+  document.documentElement.style.setProperty(
+    "--vh",
+    `${window.innerHeight * 0.01}px`
+  );
+}
+setVh();
+window.addEventListener("resize", setVh);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
