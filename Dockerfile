@@ -1,6 +1,10 @@
 # Etapa 1: Build
 FROM node:20-alpine AS builder
 
+# Argumentos de build
+ARG VITE_GOOGLE_URL
+ENV VITE_GOOGLE_URL=$VITE_GOOGLE_URL
+
 # Instalar dependencias necesarias para sharp y otras librerías nativas
 RUN apk add --no-cache python3 make g++ vips-dev
 

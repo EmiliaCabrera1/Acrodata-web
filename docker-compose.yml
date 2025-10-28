@@ -1,8 +1,12 @@
+version: "3.8"
+
 services:
   acrodata:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - VITE_GOOGLE_URL=${VITE_GOOGLE_URL}
     container_name: acrodata
     ports:
       - "${PORT:-3000}:80"
