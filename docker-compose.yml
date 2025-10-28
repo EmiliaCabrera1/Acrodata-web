@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   acrodata:
     build:
@@ -11,5 +9,4 @@ services:
     ports:
       - "${PORT:-3000}:80"
     restart: unless-stopped
-    env_file:
-      - stack.env
+
