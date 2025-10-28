@@ -5,22 +5,24 @@ FROM node:20-alpine AS builder
 ARG VITE_GOOGLE_URL
 ENV VITE_GOOGLE_URL=$VITE_GOOGLE_URL
 
-# Instalar dependencias necesarias para sharp y otras librerías nativas
-RUN apk add --no-cache python3 make g++ vips-dev
+# Instalar pnpm y dependencias necesarias para sharp
+RUN apk add --no-cache python3 make g++ vips-dev && \
+    corepack enable && \
+    corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
 # Copiar archivos de dependencias
-COPY package*.json ./
+COPY package.json pnpm-lock.yaml ./
 
 # Instalar dependencias
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 
 # Copiar el resto del código
 COPY . .
 
 # Build de la aplicación
-RUN npm run build
+RUN pnpm run build
 
 # Etapa 2: Producción
 FROM nginx:alpine
