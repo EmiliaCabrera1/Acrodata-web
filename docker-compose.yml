@@ -1,0 +1,11 @@
+services:
+  acrodata:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acrodata
+    ports:
+      - "${PORT:-3000}:80"
+    restart: unless-stopped
+    env_file:
+      - .env
