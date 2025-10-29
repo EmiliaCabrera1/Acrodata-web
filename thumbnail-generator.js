@@ -8,9 +8,9 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const inputDir = path.join(__dirname, "public/cards");
-const outputDir = path.join(__dirname, "public/thumbnails");
-const thumbSize = { width: 60 };
+const inputDir = path.join(__dirname, "public/cardsOriginal");
+const outputDir = path.join(__dirname, "public/cards");
+const thumbSize = { width: 400 };
 
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 

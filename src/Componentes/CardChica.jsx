@@ -21,6 +21,7 @@ const CardChica = ({ key, card, onClick, forma = "normal" }) => {
         src={url}
         alt={card.nombre}
         className="max-w-full max-h-full object-contain drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)]"
+        loading="lazy"
       />
     </button>
   );
