@@ -18,7 +18,7 @@ const Encabezado = () => {
         <img
           src="/img/logoNav.svg"
           alt="Logo"
-          className="absolute bottom-[20%] left-[10vw] h-[60%] sm:h-[90%] sm:bottom-[5%]"
+          className="absolute bottom-[20%] left-[10vw] h-[60%] sm:h-[90%] sm:bottom-[5%] pointer-events-none z-0"
         />
         <div className="sm:hidden w-full">
           {!expanded && (
@@ -72,7 +72,7 @@ const Encabezado = () => {
             </>
           )}
         </div>
-        <div className="hidden sm:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8">
+        <div className="hidden sm:flex w-full h-auto bg-verde-intermedio shadow-custom-shadow justify-end pr-8 z-10">
           {secciones.map((seccion, index) => (
             <h1 key={index} className="text-white text-lg px-2 my-4">
               <a href={seccion.link}>{seccion.nombre}</a>
