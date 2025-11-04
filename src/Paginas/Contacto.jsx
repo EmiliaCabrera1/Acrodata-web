@@ -11,7 +11,11 @@ const Contacto = () => {
         <div className=" ml-4 sm:ml-0 h-full flex flex-col">
           <button className="-mr-4 ">
             {" "}
-            <img src="/img/infoTaniaContacto.svg" alt="fondo info" />
+            <img
+              src="/img/infoTaniaContacto.svg"
+              alt="fondo info"
+              loading="lazy"
+            />
           </button>
           <div className="flex flex-row">
             <a
@@ -20,14 +24,22 @@ const Contacto = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/img/infoInstaContacto.svg" alt="fondo insta" />
+              <img
+                src="/img/infoInstaContacto.svg"
+                alt="fondo insta"
+                loading="lazy"
+              />
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=100069894100553"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/img/infoFaceContacto.svg" alt="fondo face" />
+              <img
+                src="/img/infoFaceContacto.svg"
+                alt="fondo face"
+                loading="lazy"
+              />
             </a>
           </div>
           <a
@@ -35,23 +47,35 @@ const Contacto = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/img/infoWappContacto.svg" alt="fondo wapp" />
+            <img
+              src="/img/infoWappContacto.svg"
+              alt="fondo wapp"
+              loading="lazy"
+            />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=dataacroyoga@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/img/infoEmailContacto.svg" alt="fondo email" />
+            <img
+              src="/img/infoEmailContacto.svg"
+              alt="fondo email"
+              loading="lazy"
+            />
           </a>
         </div>
         <div className="hidden sm:flex overflow-hidden">
-          <img src="/img/fotoContacto.svg" alt="" />
+          <img src="/img/fotoContacto.svg" alt="" loading="lazy" />
         </div>
       </div>
       <div className="hidden sm:flex flex-col">
         <button>
-          <img src="/img/presentacionPCcontacto.svg" alt="info" />
+          <img
+            src="/img/presentacionPCcontacto.svg"
+            alt="info"
+            loading="lazy"
+          />
         </button>
         <div className="flex -ml-10 justify-center items-center">
           <a
@@ -59,7 +83,7 @@ const Contacto = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/img/instagramPCcontacto.svg" alt="info" />
+            <img src="/img/instagramPCcontacto.svg" alt="info" loading="lazy" />
           </a>
           <a
             href="https://www.facebook.com/profile.php?id=100069894100553"
@@ -67,7 +91,7 @@ const Contacto = () => {
             rel="noopener noreferrer"
             className="mt-1"
           >
-            <img src="/img/facePCcontacto.svg" alt="info" />
+            <img src="/img/facePCcontacto.svg" alt="info" loading="lazy" />
           </a>
         </div>
         <a
@@ -75,14 +99,14 @@ const Contacto = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/img/wappPCcontacto.svg" alt="info" />
+          <img src="/img/wappPCcontacto.svg" alt="info" loading="lazy" />
         </a>
         <a
           href="https://mail.google.com/mail/?view=cm&fs=1&to=dataacroyoga@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/img/emailPCcontacto.svg" alt="info" />
+          <img src="/img/emailPCcontacto.svg" alt="info" loading="lazy" />
         </a>
       </div>
     </div>

@@ -46,6 +46,7 @@ const Cartilla = () => {
             className="max-w-[90%] h-auto"
             src="/img/imgCartilla.svg"
             alt="img"
+            loading="lazy"
           />
         </div>
       </div>

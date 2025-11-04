@@ -14,6 +14,7 @@ const cardDetalle = ({ card, onClick }) => {
           src={url}
           alt="Img"
           className="max-h-full object-contain drop-shadow-[0px_4px_4px_rgba(0,0,0,0.45)]"
+          loading="lazy"
         />
       </div>
 
