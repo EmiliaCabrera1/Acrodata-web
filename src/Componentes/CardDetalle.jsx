@@ -7,9 +7,7 @@ const cardDetalle = ({ card, onClick }) => {
       <h2 className="text-center font-family-titulo text-[#36463E] mt-8 uppercase text-[20px] ">
         {card.nombre}
       </h2>
-
-      {/* Imagen: flex-grow + h-1 fuerza ocupar solo espacio sobrante */}
-      <div className="flex-grow h-1 flex items-center justify-center px-4">
+      <div className="flex-grow h-[50%] flex items-center justify-center px-4">
         <img
           src={url}
           alt="Img"
@@ -17,13 +15,12 @@ const cardDetalle = ({ card, onClick }) => {
           loading="lazy"
         />
       </div>
-
       {/* Footer */}
-      <div className="px-4 pb-8">
-        <h2 className="text-center text-[#36463E] mt-8 uppercase text-[15px] mb-8 ">
+      <div className="px-4 my-4">
+        <h2 className="text-center text-[#36463E] uppercase text-[15px]">
           {card.descripcion}
         </h2>
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-2">
           <button
             onClick={onClick}
             className="text-white text-xs font-medium bg-[#36463E] px-4 py-2 rounded-lg shadow-lg active:shadow-inner cursor-pointer"
