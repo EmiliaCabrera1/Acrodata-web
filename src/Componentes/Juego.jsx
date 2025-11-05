@@ -1,11 +1,13 @@
 import useJuego from "../Hooks/useJuego";
 import CardChica from "./CardChica";
 import { useState, useEffect } from "react";
+import PopUpError from "./PopUpError";
 
 const Juego = ({ etapa, setEtapa }) => {
   const { iniciarJuego, guardarJuego, cartasJuego } = useJuego();
 
   const [cartasOrdenadas, setCartasOrdenadas] = useState([]);
+  const [showError, setShowError] = useState(false);
 
   const sumar = (card) => {
     setCartasOrdenadas([
@@ -88,12 +90,18 @@ const Juego = ({ etapa, setEtapa }) => {
           );
         })}
       </div>
+      {showError && (
+        <PopUpError
+          mensaje="Debes ordenar las 5 cartas antes de continuar"
+          onClick={() => setShowError(false)}
+        />
+      )}
       <div>
         <button
           className="w-72 text-center pt-1 text-verde-oscuro bg-fondo-claro rounded-[10px] shadow-custom-shadow cursor-pointer my-8 sm:h-12 sm:w-50"
           onClick={() => {
             if (cartasOrdenadas.length < 5) {
-              alert("Debes ordenar las 5 cartas para continuar");
+              setShowError(true);
               return;
             }
             guardarJuego(cartasOrdenadas);

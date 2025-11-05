@@ -16,11 +16,9 @@ const FiltroDificultad = ({ value = "Todas", setValue = () => {} }) => {
           {value !== opcion && <img src="/img/selectorFiltro.svg" />}
         </button>
       ))}
-      <div className="w-full flex flex-row">
-        <img
-          className="object-cover ml-[24px]"
-          src="/img/selectorFiltroLargo.svg"
-        />
+      <div className="h-full w-full flex flex-row">
+        <div className="w-[24px] bg-red" />
+        <div className="w-[26px] border-r-1 border-verde-oscuro" />
       </div>
     </div>
   );
