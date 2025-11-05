@@ -2,14 +2,16 @@ import { useState } from "react";
 import Checkbox from "../Componentes/Checkbox";
 import { useEffect } from "react";
 import useJuego from "../Hooks/useJuego";
+import PopUpError from "./PopUpError";
 
 const SelectorDeDificultad = ({ setEtapa }) => {
   const [selectedDificultades, setSelectedDificultades] = useState([]);
   const { setDificultad, iniciarJuego } = useJuego();
+  const [showError, setShowError] = useState(false);
 
   const handleDificultad = (selectedDificultades) => {
     if (selectedDificultades.length === 0) {
-      alert("Selecciona al menos una dificultad");
+      setShowError(true);
       return;
     }
     const dificultad = selectedDificultades.filter((d) => d !== "todas");
@@ -54,7 +56,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
       <h2 className="text-verde-oscuro mb-7 text-center sm:text-left sm:flex sm:pl-4">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h2>
-
+      {showError && <PopUpError mensaje="Debes seleccionar al menos una dificultad" onClick={() => setShowError(false)} />}
       <div className="flex justify-center items-center sm:items-start sm:justify-start sm:pl-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {dificultades.map((dificultad) => (

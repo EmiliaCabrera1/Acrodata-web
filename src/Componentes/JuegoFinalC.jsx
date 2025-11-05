@@ -40,7 +40,7 @@ const JuegoFinalC = ({ etapa }) => {
             })}
         </div>
         {selectedCard && (
-          <div className="flex fixed inset-0 h-[80vh] my-auto items-center justify-center bg-green-900/20 w-full">
+          <div className="flex fixed z-80 inset-0 h-[100vh] my-auto items-center justify-center bg-[rgba(95,111,102,0.3)] w-full">
             <CardDetalle
               card={selectedCard}
               onClick={() => setSelectedCard(null)}
