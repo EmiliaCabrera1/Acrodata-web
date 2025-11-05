@@ -41,9 +41,9 @@ const Cartilla = () => {
             alt="flecha"
           />
         </a>
-        <div className="flex justify-start mt-4 -ml-12 -mb-20 sm:-ml-8">
+        <div className="flex justify-start mt-2 -ml-12 -mb-20 sm:-ml-8">
           <img
-            className="max-w-[90%] h-auto"
+            className="max-w-[90%] h-auto -mt-20"
             src="/img/imgCartilla.svg"
             alt="img"
             loading="lazy"
