@@ -54,7 +54,7 @@ const Contacto = () => {
             />
           </a>
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=dataacroyoga@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=acroyogadata@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -102,7 +102,7 @@ const Contacto = () => {
           <img src="/img/wappPCcontacto.svg" alt="info" loading="lazy" />
         </a>
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=dataacroyoga@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=acroyogadata@gmail.com&su=Consulta&body=Hola%20Tania!%20Estuve%20en%20tu%20página%20y%20quiero%20saber%20más%20sobre..."
           target="_blank"
           rel="noopener noreferrer"
         >
