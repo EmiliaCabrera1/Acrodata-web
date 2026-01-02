@@ -10,22 +10,25 @@ const useJuego = () => {
   const dispatch = useDispatch();
 
   const cards = useSelector((state) => state.data?.value?.cards);
-  const dificultad = useSelector((state) => state.juego.dificultad);
+  const dificultadStore = useSelector((state) => state.juego.dificultad);
   const cartasJuego = useSelector((state) => state.juego.cartas);
 
-  const iniciarJuego = () => {
-    if (!cards || !dificultad) return;
+  const iniciarJuego = (dificultad) => {
+    const dificultadToUse = dificultad ?? dificultadStore;
+    if (!cards || !dificultadToUse) return;
 
+    console.log("Iniciando juego con dificultad:", dificultadToUse);
     const cartasXDificultad = cards.filter((card) =>
-      dificultad.includes(card.dificultad.toLowerCase())
+      dificultadToUse.includes(card.dificultad.toLowerCase())
     );
-    
+    console.log("cartasXDificultad:", cartasXDificultad.length);
     const cartasRandom = [];
     while (cartasRandom.length < 5 && cartasXDificultad.length > 0) {
       const carta =
         cartasXDificultad[Math.floor(Math.random() * cartasXDificultad.length)];
       if (cartasRandom.includes(carta)) return;
       cartasRandom.push(carta);
+      console.log("Carta añadida:", carta.nombre);
     }
 
     dispatch(_iniciarJuego(cartasRandom));

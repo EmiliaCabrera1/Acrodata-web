@@ -16,7 +16,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
     }
     const dificultad = selectedDificultades.filter((d) => d !== "todas");
     setDificultad(dificultad);
-    iniciarJuego();
+    iniciarJuego(dificultad);
     setEtapa(1);
   };
 
@@ -48,6 +48,7 @@ const SelectorDeDificultad = ({ setEtapa }) => {
       }
     }
   }, [selectedDificultades]);
+
   return (
     <div className="sm:flex-row text-center">
       <h2 className="text-verde-oscuro font-family-titulo text-[26px] hidden sm:text-left sm:flex sm:pl-4">
@@ -56,7 +57,12 @@ const SelectorDeDificultad = ({ setEtapa }) => {
       <h2 className="text-verde-oscuro mb-7 text-center sm:text-left sm:flex sm:pl-4">
         SELECCIONA LA DIFICULTAD DE TUS CARTAS
       </h2>
-      {showError && <PopUpError mensaje="Debes seleccionar al menos una dificultad" onClick={() => setShowError(false)} />}
+      {showError && (
+        <PopUpError
+          mensaje="Debes seleccionar al menos una dificultad"
+          onClick={() => setShowError(false)}
+        />
+      )}
       <div className="flex justify-center items-center sm:items-start sm:justify-start sm:pl-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {dificultades.map((dificultad) => (
